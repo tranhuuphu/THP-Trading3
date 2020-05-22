@@ -314,7 +314,7 @@
 /* 7.  Custom Sticky Menu  */
     $(window).on('scroll', function () {
       var scroll = $(window).scrollTop();
-      if (scroll < 245) {
+      if (scroll < 145) {
         $(".header-sticky ").removeClass("sticky-bar");
       } else {
         $(".header-sticky").addClass("sticky-bar");
@@ -324,7 +324,7 @@
     /*   Show img flex  */
     $(window).on('scroll', function () {
       var scroll = $(window).scrollTop();
-      if (scroll < 245) {
+      if (scroll < 145) {
         $(".header-flex").removeClass("sticky-flex");
       } else {
         $(".header-flex").addClass("sticky-flex");
@@ -333,7 +333,7 @@
 
     $(window).on('scroll', function () {
       var scroll = $(window).scrollTop();
-      if (scroll < 245) {
+      if (scroll < 145) {
           $(".header-sticky").removeClass("sticky");
       } else {
           $(".header-sticky").addClass("sticky");

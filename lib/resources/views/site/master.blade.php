@@ -125,7 +125,7 @@
     <link rel="stylesheet" href="public/site_asset/css/themify-icons.css">
     <link rel="stylesheet" href="public/site_asset/css/slick.css">
     <link rel="stylesheet" href="public/site_asset/css/nice-select.css">
-    <link rel="stylesheet" href="public/site_asset/css/style.css">
+    <link rel="stylesheet" href="public/site_asset/css/style.css?v=<?php echo time(); ?>">
 
 	<style type="text/css">
 		.hotline-phone-ring-wrap {
