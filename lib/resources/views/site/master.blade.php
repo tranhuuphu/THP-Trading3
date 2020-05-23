@@ -80,52 +80,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="audience" content="General">
     <meta http-equiv="content-language" content="vi" />
-        <meta http-equiv="REFRESH" content="1800">    
+    <meta http-equiv="REFRESH" content="1800">    
     <meta name="revisit-after" content="1 days">
 
-	<!-- Google font -->
-	{{-- <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet"> --}}
-<!--=======================================================================-->
+
 
 	<link rel="stylesheet" type="text/css" href="public/vendor/bootstrap/css/bootstrap.min.css">
-<!--=======================================================================-->
-
-	{{-- <link rel="stylesheet" type="text/css" href="fonts/fontawesome-5.0.8/css/fontawesome-all.min.css"> --}}
+	<!--=======================================================================-->
 
 	{{-- <link rel="stylesheet" type="text/css" href="public/vendor/font-awesome/5.13/css/all.min.css"> --}}
-<!--=======================================================================-->
+	<!--=======================================================================-->
 
-	{{-- <link rel="stylesheet" type="text/css" href="public/site_asset/fonts/iconic/css/material-design-iconic-font.min.css"> --}}
-<!--=======================================================================-->
+	<!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
 
-	{{-- <link rel="stylesheet" type="text/css" href="public/site_asset/vendor/animate/animate.css"> --}}
-<!--=======================================================================-->
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="public/site_asset/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="public/site_asset/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="public/site_asset/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="public/site_asset/css/slicknav.min.css?v=<?php echo time(); ?>" type="text/css">
+    <link rel="stylesheet" href="public/site_asset/css/style.css?v=<?php echo time(); ?>" type="text/css">
 
-	{{-- <link rel="stylesheet" type="text/css" href="public/site_asset/vendor/css-hamburgers/hamburgers.min.css"> --}}
-<!--=======================================================================-->
-
-	{{-- <link rel="stylesheet" type="text/css" href="public/site_asset/vendor/animsition/css/animsition.min.css"> --}}
-<!--=======================================================================-->
-
-	{{-- <link rel="stylesheet" type="text/css" href="public/site_asset/css/main2.css?v=<?php echo time(); ?>"> --}}
-<!--=======================================================================-->
-
-	{{-- <link rel="stylesheet" type="text/css" href="public/site_asset/css/main.css?v=<?php echo time(); ?>"> --}}
-<!--=======================================================================-->
-
-
-	{{-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> --}}
-    <link rel="stylesheet" href="public/site_asset/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="public/site_asset/css/ticker-style.css">
-    <link rel="stylesheet" href="public/site_asset/css/flaticon.css">
-    <link rel="stylesheet" href="public/site_asset/css/slicknav.css">
-    <link rel="stylesheet" href="public/site_asset/css/animate.min.css">
-    <link rel="stylesheet" href="public/site_asset/css/magnific-popup.css">
-    <link rel="stylesheet" href="public/site_asset/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="public/site_asset/css/themify-icons.css">
-    <link rel="stylesheet" href="public/site_asset/css/slick.css">
-    <link rel="stylesheet" href="public/site_asset/css/nice-select.css">
-    <link rel="stylesheet" href="public/site_asset/css/style.css?v=<?php echo time(); ?>">
 
 	<style type="text/css">
 		.hotline-phone-ring-wrap {
@@ -305,130 +280,7 @@
 		  }
 		}
 
-		.img-carbox {
-			width: 100%;
-			height:200px;
-			border-top-left-radius:2px;
-			border-top-right-radius:2px;
-			display:block;
-			overflow: hidden;
-			background: #fff;
-		}
-		.img-carbox img{
-			width: 100%;
-			height: 200px;
-			padding: 10px;
-			object-fit:scale-down; 
-			transition: all .25s ease;
-		}
-
-	
-
-		.img-carbox3 {
-			height:414px;
-			border-top-left-radius:2px;
-			border-top-right-radius:2px;
-			display:block;
-			overflow: hidden;
-			background: #fff;
-		}
-		.img-carbox3 img{
-			height: 414px !important;
-			width: auto;
-			object-fit: scale-down; 
-			transition: all .25s ease;
-		}
-		.img-carbox4 {
-			max-height:90px;
-			border-top-left-radius:2px;
-			border-top-right-radius:2px;
-			display:block;
-			overflow: hidden;
-			background: #fff;
-		}
-		.img-carbox4 img{
-			max-height: 90px !important;
-			width: auto;
-			object-fit: scale-down; 
-			transition: all .25s ease;
-		}
-
 		
-
-		.img-carbox6 {
-			height:200px;
-			border-top-left-radius:2px;
-			border-top-right-radius:2px;
-			display:block;
-			overflow: hidden;
-			background: #fff;
-		}
-		.img-carbox6 img{
-			height: 200px;
-			object-fit: scale-down; 
-			transition: all .25s ease;
-		}
-		.post3 a:hover{
-			color: #fff
-		}
-
-		@media only screen and (max-width: 991px) {
-		    .img-carbox6 {
-				height:150px;
-				border-top-left-radius:2px;
-				border-top-right-radius:2px;
-				display:block;
-				overflow: hidden;
-				background: #fff;
-			}
-			.img-carbox6 img{
-				height: 150px;
-				object-fit: scale-down; 
-				transition: all .25s ease;
-			}
-			.img-carbox3 {
-				height:180px;
-				border-top-left-radius:2px;
-				border-top-right-radius:2px;
-				display:block;
-				overflow: hidden;
-				background: #fff;
-			}
-			.img-carbox3 img{
-				height: 180px !important;
-				width: auto;
-				object-fit: scale-down; 
-				transition: all .25s ease;
-			}
-		}
-
-		.box.box-warning {
-		    border-top-color: #f39c12;
-		}
-		.box {
-		    position: relative;
-		    border-radius: 0px;
-		    background: #ffffff;
-		    border-top: 3px solid #d2d6de;
-		    margin-bottom: 20px;
-		    width: 100%;
-		    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-		}
-		.a-hover-cate > a:hover{
-			color: #63a3f7 !important;
-		}
-
-		.post2_header img{
-			width: 100% !important;
-			height: auto !important;
-			margin: auto !important;
-			padding: 15px 0;
-		}
-
-        .pagination li, a{
-            outline: none !important;
-            box-shadow: none !important;
-        }
        select, input, label{
             outline: none !important;
             box-shadow: none !important;
@@ -436,30 +288,10 @@
         label{
             font-weight: bold;
         }
-        form, input, textarea, .form-group{
+        form, input, textarea, button, .form-group{
             border-radius: none !important;
         }
-        .has-search-right {
-		    position: relative;
-		}
-
-		.has-search-right .form-control {
-		    padding-right: 2rem;
-		}
-
-		.has-search-right .form-control-feedback {
-		    position: absolute;
-		    top: 0;
-		    right: 0;
-		    z-index: 2;
-		    display: block;
-		    width: 2rem;
-		    height: 2rem;
-		    line-height: 2rem;
-		    text-align: center;
-		    color: #aaa;
-		    padding-top: 4px;
-		}
+        
 		.form-group{
 			margin-bottom: 0 !important;
 		}
@@ -476,31 +308,15 @@
           box-shadow: inset 0 -1px 0 #ddd;
           outline:none;
         }
-        button> .fa-search:hover{
-        	color: #0f69f7;
-        	transition: 0.3s;
-        }
-        .adBlock2{
-			display: hidden !important;
-		}
-		#e3{
-			display: hidden !important;
-		}
+        @yield('style_code')
 	</style>
-	@yield('style_code')
 
 </head>
 <body>
-	<div id="preloader-active">
-	    <div class="preloader d-flex align-items-center justify-content-center">
-	        <div class="preloader-inner position-relative">
-	            <div class="preloader-circle"></div>
-	            <div class="preloader-img pere-text">
-	                <img src="assets/img/logo/logo.png" alt="">
-	            </div>
-	        </div>
-	    </div>
-	</div>
+	<div id="preloder">
+        <div class="loader"></div>
+    </div>
+
 	
 	@include('site.nav')
 	@if(!isset($page_result))
@@ -512,56 +328,32 @@
 	@include('site.footer')
 	<!-- Footer -->
 
-<!--=======================================================================-->	
-	<script src="public/vendor/jquery/jquery-3.4.1.min.js"></script>
-<!--=======================================================================-->
-	{{-- <script src="public/site_asset/vendor/animsition/js/animsition.min.js"></script> --}}
+	<!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="fa fa-close"></i></div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+            <button type="submit" class="btn btn-info" style="margin-right: 12px;"><i class="fa fa-search"></i></button>
+        </div>
+    </div>
+    <!-- Search model end -->
 
-<!--=======================================================================-->
-	{{-- <script src="public/site_asset/vendor/bootstrap/js/popper.js"></script> --}}
-	{{-- <script src="public/vendor/bootstrap/js/bootstrap.min.js"></script> --}}
-<!--=======================================================================-->
+	<!--=======================================================================-->	
+	<script src="public/vendor/jquery/jquery-3.4.1.min.js"></script>
+
+	<script src="public/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--=======================================================================-->
 	{{-- <script src="public/site_asset/js/main.js"></script> --}}
 
-
-
-
-
-
-	{{-- New --}}
-	<script src="public/site_asset/js/vendor/modernizr-3.5.0.min.js"></script>
-    <!-- Jquery, Popper, Bootstrap -->
-    {{-- <script src="public/site_asset/js/vendor/jquery-1.12.4.min.js"></script> --}}
-    <script src="public/site_asset/js/popper.min.js"></script>
-    <script src="public/site_asset/js/bootstrap.min.js"></script>
-    <!-- Jquery Mobile Menu -->
-    <script src="public/site_asset/js/jquery.slicknav.min.js"></script>
-
-    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="public/site_asset/js/jquery.magnific-popup.min.js"></script>
+    <script src="public/site_asset/js/jquery.slicknav.js"></script>
     <script src="public/site_asset/js/owl.carousel.min.js"></script>
-    <script src="public/site_asset/js/slick.min.js"></script>
-    <!-- Date Picker -->
-    <script src="public/site_asset/js/gijgo.min.js"></script>
-    <!-- One Page, Animated-HeadLin -->
-    <script src="public/site_asset/js/wow.min.js"></script>
-    <script src="public/site_asset/js/animated.headline.js"></script>
-    <script src="public/site_asset/js/jquery.magnific-popup.js"></script>
-
-    <!-- Scrollup, nice-select, sticky -->
-    <script src="public/site_asset/js/jquery.scrollUp.min.js"></script>
-    <script src="public/site_asset/js/jquery.nice-select.min.js"></script>
-    <script src="public/site_asset/js/jquery.sticky.js"></script>
-    
-    <!-- contact js -->
-    <script src="public/site_asset/js/contact.js"></script>
-    <script src="public/site_asset/js/jquery.form.js"></script>
-    <script src="public/site_asset/js/jquery.validate.min.js"></script>
-    <script src="public/site_asset/js/mail-script.js"></script>
-    <script src="public/site_asset/js/jquery.ajaxchimp.min.js"></script>
-    
-    <!-- Jquery Plugins, main Jquery -->	
-    <script src="public/site_asset/js/plugins.js"></script>
     <script src="public/site_asset/js/main.js"></script>
+
+
+
 
 
 	<script async src="https://cse.google.com/cse.js?cx=018266326217034628598:uchmus2ba3r"></script>
@@ -572,8 +364,5 @@
 	  <!-- Load Facebook SDK for JavaScript -->
   
 
-	  <script type="text/javascript">
-	  	$("#adBlock").css('display', 'none');;
-	  </script>
 </body>
 </html>
