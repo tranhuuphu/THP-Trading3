@@ -8,10 +8,18 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - THP Trading</title>
+
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
         <link href="admin/css/styles.css" rel="stylesheet" />
-        {{-- <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" /> --}}
+
         <link href="vendor/dataTable/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-        <script src="vendor/font-awesome/5.13/js/all.min.js" crossorigin="anonymous"></script>
+
+        <link href="vendor/font-awesome/5.13/css/all.min.css" rel="stylesheet" />
+
+        {{-- <link href="vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" /> --}}
+        
+        
         {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script> --}}
         <script type="text/javascript" src="editor/ckeditor/ckeditor.js"></script>
         <style type="text/css">
@@ -118,19 +126,23 @@
         {{-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script> --}}
         <script src="vendor/jquery/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
 
-        {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script> --}}
+
+        {{-- <link href="vendor/bootstrap-select/js/bootstrap-select.min.js" rel="stylesheet" /> --}}
+
+
         <script src="vendor/bootstrap/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
+        <script src="vendor/font-awesome/5.13/js/all.min.js" crossorigin="anonymous"></script>
+
         <script src="admin/js/scripts.js"></script>
-        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script> --}}
+
 
         <script src="vendor/dataTable/jquery.dataTables.min.js" crossorigin="anonymous"></script>
         <script src="vendor/dataTable/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 
-        {{-- <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script> --}}
 
         <script src="vendor/dataTable/datatables-demo.js"></script>
+
         <script type="text/javascript">
             function changeImg(input){
                 //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới

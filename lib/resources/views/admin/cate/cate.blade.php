@@ -19,8 +19,26 @@
 					</div>
 					<div class="card-body">
 						@include('notice.note')
+						<style type="text/css">
+							select {
+							  font-family: 'Font Awesome 5 Free'
+							}
+
+						</style>
 						<form method="post">
 							@csrf
+
+							<div class="form-group" >
+								<label>Lựa Chọn Menu - Danh mục</label>
+
+								<select required name="parent_cate_id" class="form-control custom-select">
+									<option value="0" style="color: red;">&#xf35a; LÀ MENU CHA</option>
+									<option value="" disabled style="color: blue; background: #dee3e3">Là Menu Con Của</option>
+									@foreach($cate_parent as $c)
+									<option value="{{$c->cate_id}}" style="background: #f5f5f5; text-transform: capitalize;">&#xf07c; {{$c->cate_name}}</option>
+									@endforeach
+			                    </select>
+							</div>
 							<div class="form-group">
 								<label><strong>Tên danh mục:</strong></label>
 								<input type="text" name="name" class="form-control" placeholder="Tên danh mục...">
@@ -47,6 +65,8 @@
 					</div>
 				</div>
 
+
+
 			</div>
 			<div class="col-xs-12 col-md-7 col-lg-7">
 
@@ -70,10 +90,21 @@
                                 <tbody>
 									@foreach($cateList as $cate)
                                         <tr>
-                                            <td>{{$cate->cate_name}}</td>
+                                        	<td>
+                                        		@if($cate->parent_cate_id == 0)
+                                        			<strong>{{$cate->cate_name}}</strong>
+                                        		@elseif($cate->parent_cate_id != 0)
+                                        			{{$cate->cate_name}}
+                                        			@foreach($cateList as $cate2)
+                                        				@if($cate2->cate_id == $cate->parent_cate_id)
+                                        					(<small style="color: blue">{{$cate2->cate_name}}</small>)
+                                        				@endif
+                                        			@endforeach
+                                        		@endif
+                                        	</td>
 									<td>
-			                    		<a href="{{asset('admin/cate/edit/'.$cate->cate_id)}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-			                    		<a href="{{asset('admin/cate/delete/'.$cate->cate_id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Xóa</a>
+			                    		<a href="{{asset('admin/cate/edit/'.$cate->cate_id)}}" class="btn btn-warning"><i class="fas fa-edit" aria-hidden="true"></i> Sửa</a>
+			                    		<a href="{{asset('admin/cate/delete/'.$cate->cate_id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger"><i class="far fa-trash-alt" aria-hidden="true"></i> Xóa</a>
 			                  		</td>
                                         </tr>
 									@endforeach

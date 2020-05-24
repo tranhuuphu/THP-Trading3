@@ -22,8 +22,28 @@
 					</div>
 					<div class="card-body">
 						@include('notice.note')
+						<style type="text/css">
+							select {
+							  font-family: 'Font Awesome 5 Free'
+							}
+
+						</style>
 						<form method="post">
 							<div class="form-group">
+								<label>Lựa Chọn Menu - Danh mục</label>
+
+								<select required name="parent_cate_id" class="form-control custom-select">
+									<option value="0" style="color: red;">&#xf35a; LÀ MENU CHA</option>
+									<option value="" disabled style="color: blue; background: #dee3e3">Là Menu Con Của</option>
+									@foreach($cate_parent as $c)
+									<option value="{{$c->cate_id}}"
+										@if($c->cate_id == $cate->parent_cate_id)
+											selected
+										@endif
+										style="background: #f5f5f5; text-transform: capitalize;">&#xf07c; {{$c->cate_name}}</option>
+									@endforeach
+			                    </select>
+
 								<label>Tên danh mục:</label>
     							<input type="text" name="name" class="form-control" placeholder="Tên danh mục..." value="{{$cate->cate_name}}">
 							</div>

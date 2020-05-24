@@ -57,7 +57,6 @@ class PostController extends Controller
     	$post->meta_key = $request->meta_key;
     	$post->meta_desc = $request->meta_desc;
     	$post->post_cate_id = $request->post_cate_id;
-    	// dd($file = $request->file('post_image'));
         if($request->hasFile('post_image')){
             $file = $request->file('post_image');
             $tag = $file->getClientOriginalExtension();

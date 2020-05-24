@@ -92,6 +92,10 @@ class SiteController extends Controller
         $post_slug_2 = $post_detail->post_slug;
 
         $cate_slug = $cate_data->cate_slug;
+        
+        if($cate_data == null || !isset($cate_data)){
+            return redirect(asset(''.'/uncategory/'.$post_slug_2.'-'.$id.'.html'));
+        }
 
 
         if($post_slug != $post_slug_2 || $cate != $cate_slug || $id_check_count != $id_check_count2){

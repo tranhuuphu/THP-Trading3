@@ -26,7 +26,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        $data['cate'] = Cate::all();
+        $data['cate'] = Cate::where('parent_cate_id', 0)->get();
+        $data['cate2'] = Cate::where('parent_cate_id', '!=', 0)->get();
         $data['page'] = Page::where('page_status', '!=', 1)->get();
         $data['page_favicon'] = Page::select('page_image', 'meta_key', 'meta_desc')->where('page_status', '==', 1)->first();
         view()->share($data);
