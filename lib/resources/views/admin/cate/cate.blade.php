@@ -21,8 +21,8 @@
 						@include('notice.note')
 						<style type="text/css">
 							select {
-							  font-family: 'Font Awesome 5 Free'
-							}
+				                font-family: 'Font Awesome 5 Free'
+				            }
 
 						</style>
 						<form method="post">
@@ -31,12 +31,14 @@
 							<div class="form-group" >
 								<label>Lựa Chọn Menu - Danh mục</label>
 
-								<select required name="parent_cate_id" class="form-control custom-select">
-									<option value="0" style="color: red;">&#xf35a; LÀ MENU CHA</option>
-									<option value="" disabled style="color: blue; background: #dee3e3">Là Menu Con Của</option>
-									@foreach($cate_parent as $c)
-									<option value="{{$c->cate_id}}" style="background: #f5f5f5; text-transform: capitalize;">&#xf07c; {{$c->cate_name}}</option>
-									@endforeach
+								<select required name="parent_cate_id" class="custom-select form-control">
+									<option value="0" style="color: red;">&#xf35a; Là Danh Mục Lớn</option>
+									<div role="separator" class="dropdown-divider"></div>
+									<optgroup label="Là Menu Con Của">
+										@foreach($cate_parent as $c)
+											<option value="{{$c->cate_id}}" style="background: #f5f5f5; text-transform: capitalize;">&#xf07c; {{$c->cate_name}}</option>
+										@endforeach
+									</optgroup>
 			                    </select>
 							</div>
 							<div class="form-group">

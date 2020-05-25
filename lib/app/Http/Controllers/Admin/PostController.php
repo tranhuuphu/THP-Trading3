@@ -39,8 +39,12 @@ class PostController extends Controller
     }
 
     public function getAddPost(){
-    	$data['cate'] = Cate::all();
-    	return view('admin.post.add_post', $data);
+    	$parent_cate = Cate::where('parent_cate_id', 0)->get();
+        foreach ($parent_cate as $cate) {
+            $cate_sub_id[] = Cate::where('parent_cate_id', $cate->cate_id)->get();
+        }
+        // dd($cate_sub_id);
+    	return view('admin.post.add_post', compact(['parent_cate', 'cate_sub_id']));
     }
     public function postAddPost(Request $request){
 

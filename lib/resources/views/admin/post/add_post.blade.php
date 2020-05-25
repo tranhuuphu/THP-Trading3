@@ -32,16 +32,36 @@
 										<input required type="text" name="post_title" class="form-control" value="{{old('post_title')}}">
 									</div>
 									<hr>
+
 									<div class="form-group" >
-										<label>Danh mục</label>
-										<select required name="post_cate_id" class="form-control">
-											@foreach($cate as $c)
-											<option value="{{$c->cate_id}}">{{$c->cate_name}}</option>
+										<label>Lựa Chọn Menu Cho Bài Viết</label>
+
+										<select required name="post_cate_id" class="custom-select form-control">
+											@foreach($parent_cate as $c)
+												<?php
+													$cate_sub_exists = DB::table('cate')->where('parent_cate_id', $c->cate_id)->first();
+													$cate_sub_exists2 = DB::table('cate')->where('parent_cate_id', $c->cate_id)->get();
+												?>
+												@if(!isset($cate_sub_exists))
+													<option value="{{$c->cate_id}}">{{$c->cate_name}}</option>
+												@else
+													<optgroup label="{{$c->cate_name}}">
+														@foreach($cate_sub_exists2 as $c2)
+															<option value="{{$c2->cate_id}}" style="background: #f5f5f5; text-transform: capitalize;">&#xf35a; {{$c2->cate_name}}</option>
+														@endforeach
+													</optgroup>
+												@endif
 											@endforeach
+
 					                    </select>
 									</div>
 									<hr>
+									<style type="text/css">
+										select {
+							                font-family: 'Font Awesome 5 Free'
+							            }
 
+									</style>
 									<div class="form-group" >
 										<label>Giới Thiệu</label>
 										<textarea class="form-control" required name="post_intro" rows="5" maxlength="80">{{old('post_intro')}}</textarea>

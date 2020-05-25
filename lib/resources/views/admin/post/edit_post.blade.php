@@ -22,6 +22,12 @@
 					</div>
 					<div class="card-body">
 						@include('notice.note')
+						<style type="text/css">
+							select {
+				                font-family: 'Font Awesome 5 Free'
+				            }
+
+						</style>
 						<form method="post" enctype="multipart/form-data">
 							<div class="row" style="margin: 0px 0">
 

@@ -856,7 +856,7 @@
 						}
 					?>
 					
-					<div class="col-md-4 pt-3" style="background: #58aafc">
+{{-- 					<div class="col-md-4 pt-3" style="background: #58aafc">
 						<div class="post post3">
 							<a class="post-img img-carbox" href="{{asset('/'.$r_slug.'/'.$r->post_slug.'-'.$r->post_id.'.html')}}" title="{{$r->post_title}}">
 								<img src="{{asset('public/upload/post/'.$r->post_image)}}" alt="{{$r->post_title}}">
@@ -864,12 +864,11 @@
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category cat-1" href="{{asset('/'.$r_slug)}}" title="{{$r_cate}}">{{$r_cate}}</a>
-									{{-- <span class="post-date">March 27, 2018</span> --}}
 								</div>
 								<h3 class="post-title"><a href="{{asset('/'.$r_slug.'/'.$r->post_slug.'-'.$r->post_id.'.html')}}" title="{{$r->post_title}}">{{$r->post_title}}</a></h3>
 							</div>
 						</div>
-					</div>
+					</div> --}}
 				@endforeach
 				<!-- /post -->
 

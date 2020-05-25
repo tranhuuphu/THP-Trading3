@@ -313,9 +313,9 @@
 
 </head>
 <body>
-	<div id="preloder">
+{{-- 	<div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> --}}
 
 	
 	@include('site.nav')

@@ -1,3 +1,4 @@
+    
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
@@ -25,19 +26,30 @@
             </div>
         </div>
         <ul class="main-menu mobile-menu">
-            <li class="active"><a href="./index.html">Home</a></li>
-            <li><a href="./club.html">Club</a></li>
-            <li><a href="./schedule.html">Schedule</a></li>
-            <li><a href="./result.html">Results</a></li>
-            <li><a href="#">Sport</a></li>
-            <li><a href="#">Pages</a>
-                <ul class="dropdown">
-                    <li><a href="./blog.html">Blog</a></li>
-                    <li><a href="./blog-details.html">Blog Details</a></li>
-                    <li><a href="#">Schedule</a></li>
-                    <li><a href="#">Results</a></li>
-                </ul>
+
+
+
+
+            @foreach($cate as $c)
+            <li><a href="{{$c->cate_slug}}" title="{{$c->cate_name}}">{{$c->cate_name}}</a>
+                <?php
+                    $sub_exist = DB::table('cate')->where('parent_cate_id', $c->cate_id)->first();
+                ?>
+                @if(isset($sub_exist))
+                    <ul class="dropdown">
+                @endif
+
+                    @foreach($cate2 as $c2)
+                        @if($c2->parent_cate_id == $c->cate_id)
+                            <li><a href="{{$c->cate_slug}}" title="{{$c->cate_name}}">{{$c2->cate_name}}</a></li>
+                        @endif
+                    @endforeach
+                @if(isset($sub_exist))
+                    </ul>
+                @endif
             </li>
+            @endforeach
+            {{-- @endforeach --}}
             <li><a href="./contact.html">Contact Us</a></li>
         </ul>
         <div id="mobile-menu-wrap"></div>
@@ -89,35 +101,37 @@
 
                                     <li>
                                         <a href="{{$c->cate_slug}}" title="{{$c->cate_name}}">{{$c->cate_name}}
-                                            <i class='fa fa-angle-down' aria-hidden='true'></i>
+                                            <?php
+                                                $sub_exist = DB::table('cate')->where('parent_cate_id', $c->cate_id)->first();
+                                            ?>
+                                            @if(isset($sub_exist))
+                                                <i class='fa fa-angle-down' aria-hidden='true'></i>
+                                            @endif
                                                 
                                         </a>
-                                        <ul class="dropdown">
+                                        @if(isset($sub_exist))
+                                            <ul class="dropdown">
+                                        
                                             @foreach($cate2 as $c2)
                                                 @if($c2->parent_cate_id == $c->cate_id)
-                                                    <li><a href="./blog.html">{{$c2->cate_name}}</a></li>
+                                                    <li><a href="{{$c->cate_slug}}" title="{{$c->cate_name}}">{{$c2->cate_name}}</a></li>
                                                 @endif
                                             @endforeach
-                                        </ul>
+                                        
+                                            </ul>
+                                        @endif
 
                                     </li>
 
-                                @endforeach
 
-                                {{-- <li class=""><a href="#">Pages2 <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                    <ul class="dropdown">
-                                        <li><a href="./blog.html">Blog</a></li>
-                                        <li><a href="./blog-details.html">Blog Details</a></li>
-                                        <li><a href="#">Schedule</a></li>
-                                        <li><a href="#">Results</a></li>
-                                    </ul>
-                                </li> --}}
-                                {{-- <li><a href="./contact.html">Contact Us</a></li> --}}
+                                @endforeach
                             </ul>
                             <div class="nm-right search-switch">
                                 <i class="fa fa-search"></i>
                             </div>
                         </div>
+
+
                     </div>
 
                 </div>
