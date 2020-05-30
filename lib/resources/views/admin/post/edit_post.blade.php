@@ -37,15 +37,7 @@
 										<input required type="text" name="post_title" class="form-control" value="{{$post->post_title}}">
 									</div>
 									<hr>
-									<div class="form-group" >
-										<label>Danh mục</label>
-										<select required name="post_cate_id" class="form-control">
-											@foreach($cate as $c)
-													<option value="{{$c->cate_id}}" @if($c->cate_id == $post->post_cate_id) selected @endif>{{$c->cate_name}}</option>
-											@endforeach
-					                    </select>
-									</div>
-									<hr>
+									
 
 									<div class="form-group" >
 										<label>Giới Thiệu</label>
@@ -93,8 +85,32 @@
 									<hr>
 									<div class="form-group" >
 										<label>Bài viết nổi bật</label><br>
-										Có: <input type="radio" @if($post->post_featured == 1) selected @endif name="post_featured" value="1" >
-										Không: <input type="radio" @if($post->post_featured == 0) selected @endif name="post_featured" value="0" >
+										Có: <input type="radio" @if($post->post_featured == 1) checked="" @endif name="post_featured" value="1" >
+										Không: <input type="radio" @if($post->post_featured == 0) checked="" @endif name="post_featured" value="0" >
+									</div>
+									<hr>
+
+									<div class="form-group" >
+										<label>Lựa Chọn Menu Cho Bài Viết</label>
+
+										<select required name="post_cate_id" class="custom-select form-control">
+											@foreach($parent_cate as $c)
+												<?php
+													$cate_sub_exists = DB::table('cate')->where('parent_cate_id', $c->cate_id)->first();
+													$cate_sub_exists2 = DB::table('cate')->where('parent_cate_id', $c->cate_id)->get();
+												?>
+												@if(!isset($cate_sub_exists))
+													<option value="{{$c->cate_id}}" @if($c->cate_id == $post->post_cate_id) selected @endif>{{$c->cate_name}}</option>
+												@else
+													<optgroup label="{{$c->cate_name}}">
+														@foreach($cate_sub_exists2 as $c2)
+															<option value="{{$c2->cate_id}}" style="background: #f5f5f5; text-transform: capitalize;"@if($c2->cate_id == $post->post_cate_id) selected @endif>&#xf35a; {{$c2->cate_name}}</option>
+														@endforeach
+													</optgroup>
+												@endif
+											@endforeach
+
+					                    </select>
 									</div>
 									<hr>
 

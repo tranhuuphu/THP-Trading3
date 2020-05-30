@@ -717,7 +717,7 @@
 
 
 	<!-- Feature post -->
-	<?php
+{{-- 	<?php
 		$feat_1 = $featured->shift(1);
 		$feat_2 = $featured->slice(0, 1);
 		$feat_3 = $featured->slice(1, 2);
@@ -733,149 +733,13 @@
 				$c2_cate = $k->cate_name;
 			}
 		}
-	?>
+	?> --}}
 	<br>
-	{{-- Feature --}}
-	<section class="bg0 pb-3" style="margin-top: 0px;">
-		<div class="container bg-secondary">
-			<div class="row m-rl--1 pt-2 pb-2">
-				<div class="col-md-6 p-rl-1 p-b-2 bg-light">
-					<div class="bg-img1 size-a-3 how1 pos-relative" style="background-image: url({{asset('public/upload/post/'.$feat_1->post_image)}}); background-size: contain" aria-label="{{$feat_1->post_title}}">
-						<a href="{{asset('/'.$c_slug.'/'.$feat_1->post_slug.'-'.$feat_1->post_id.'.html')}}" class="dis-block how1-child1 trans-03" title="{{$feat_1->post_title}}"></a>
 
-						<div class="flex-col-e-s s-full p-rl-25 p-tb-20" style="font-family: 'Nunito Sans' !important">
-							<a href="{{asset('/'.$c_slug)}}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2" title="{{$c_cate}}">
-								{{$c_cate}}
-							</a>
-							
-							<h3 class="how1-child2 m-t-14 m-b-10">
-								<a href="{{asset('/'.$c_slug.'/'.$feat_1->post_slug.'-'.$feat_1->post_id.'.html')}}" class="how-txt1 size-a-6 f1-l-2 cl0 hov-cl10 trans-03" style="font-family: 'Nunito Sans' !important" title="{{$feat_1->post_title}}">
-									{{$feat_1->post_title}}
-								</a>
-							</h3>
-
-							<span class="how1-child2 m-b-1" style="margin-bottom: 15px; color: white">
-								<span class="f1-s-4 cl11">
-									<?php echo substr($feat_1->created_at, 0, 7) ?>
-								</span>
-							</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-6 p-rl-1 bg-light">
-					<div class="row m-rl--1">
-						<div class="col-12 p-rl-1 p-b-2">
-							<div class="bg-img2 size-a-4 how1 pos-relative" style="background-image: url({{asset('public/upload/post/'.$feat_2['0']['post_image'])}}); background-size: contain" aria-label="{{$feat_2['0']['post_title']}}">
-								<a href="{{asset('/'.$c2_slug.'/'.$feat_2['0']['post_slug'].'-'.$feat_2['0']['post_id'].'.html')}}" class="dis-block how1-child1 trans-03" title="{{$feat_2['0']['post_title']}}"></a>
-
-								<div class="flex-col-e-s s-full p-rl-25 p-tb-24">
-									<a href="{{asset('/'.$c2_slug)}}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2" title="{{$c2_cate}}">
-										{{$c2_cate}}
-									</a>
-
-									<h3 class="how1-child2 m-t-14">
-										<a href="{{asset('/'.$c2_slug.'/'.$feat_2['0']['post_slug'].'-'.$feat_2['0']['post_id'].'.html')}}" class="how-txt1 size-a-7 f1-l-2 cl0 hov-cl10 trans-03" title="{{$feat_2['0']['post_title']}}">
-											{{$feat_2['0']['post_title']}}
-										</a>
-									</h3>
-
-									<span class="how1-child2 m-b-1" style="margin-bottom: 5px;">
-										<span class="f1-s-4 cl1" style="color: white">
-											<?php echo substr($feat_2['0']['created_at'], 0, 7) ?>
-										</span>
-									</span>
-								</div>
-							</div>
-						</div>
-							
-						
-						@foreach($feat_3 as $f3)
-							<?php
-								foreach ($cate as $k) {
-									if($k->cate_id == $f3->post_cate_id){
-										$c3_slug = $k->cate_slug;
-										$c3_cate = $k->cate_name;
-									}
-								}
-							?>
-							<div class="col-sm-6 col-xs-6 p-rl-1 p-b-2 col-md-6 col-lg-6 bg-light">
-								<div class="bg-img3 how1 pos-relative" style="background-image: url({{asset('public/upload/post/'.$f3->post_image)}}); background-size: contain" aria-label="{{$f3->post_title}}">
-									<a href="{{asset('/'.$c3_slug.'/'.$f3->post_slug.'-'.$f3->post_id.'.html')}}" class="dis-block how1-child1 trans-03" title="{{$f3->post_title}}"></a>
-									
-									<div class="flex-col-e-s s-full p-rl-25 p-tb-20">
-										<a href="{{asset('/'.$c3_slug)}}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2" title="{{$c3_cate}}">
-											{{$c3_cate}}
-										</a>
-
-										<h3 class="how1-child2 m-t-14">
-											<a href="{{asset('/'.$c3_slug.'/'.$f3->post_slug.'-'.$f3->post_id.'.html')}}" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03" title="{{$f3->post_title}}">
-												{{$f3->post_title}}
-											</a>
-										</h3>
-										<span class="how1-child2 m-b-1" style="margin-bottom: 5px;">
-											<span class="f1-s-4 cl1" style="color: white">
-												<?php echo substr($f3->created_at, 0, 7) ?>
-											</span>
-										</span>
-									</div>
-								</div>
-							</div>
-						@endforeach
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Feature post -->
 	<hr>
 
 
-	<!-- section Recent Post -->
-	<div class="section mt-3 mb-3">
-		<!-- container -->
-		<div class="container ">
-			<!-- row -->
-			<div class="row">
-				<div class="col-md-12">
-					<div class="section-title p-t-2" >
-						<h2>Recent Posts</h2>
-					</div>
-				</div>
 
-				<!-- post -->
-			
-				@foreach($recent as $r)
-					<?php
-						foreach ($cate as $k) {
-							if($k->cate_id == $r->post_cate_id){
-								$r_slug = $k->cate_slug;
-								$r_cate = $k->cate_name;
-							}
-						}
-					?>
-					
-{{-- 					<div class="col-md-4 pt-3" style="background: #58aafc">
-						<div class="post post3">
-							<a class="post-img img-carbox" href="{{asset('/'.$r_slug.'/'.$r->post_slug.'-'.$r->post_id.'.html')}}" title="{{$r->post_title}}">
-								<img src="{{asset('public/upload/post/'.$r->post_image)}}" alt="{{$r->post_title}}">
-							</a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-1" href="{{asset('/'.$r_slug)}}" title="{{$r_cate}}">{{$r_cate}}</a>
-								</div>
-								<h3 class="post-title"><a href="{{asset('/'.$r_slug.'/'.$r->post_slug.'-'.$r->post_id.'.html')}}" title="{{$r->post_title}}">{{$r->post_title}}</a></h3>
-							</div>
-						</div>
-					</div> --}}
-				@endforeach
-				<!-- /post -->
-
-			</div>
-			<!-- /row -->
-		</div>
-		<hr>
 
 		<!-- row Post Theo Cate-->
 		<div class="container">
@@ -884,7 +748,7 @@
 					
 					@foreach($cate as $ct)
 						<?php
-							$p_cate = DB::table('post')->orderBy('post_id', 'desc')->where('post_cate_id', $ct->cate_id)->take(5)->get();
+							$p_cate = DB::table('post2')->orderBy('post_id', 'desc')->where('post_cate_id', $ct->cate_id)->take(5)->get();
 							$p_cate_first = $p_cate->shift();
 							$p_cate_second = $p_cate->all();
 						?>

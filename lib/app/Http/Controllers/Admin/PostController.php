@@ -33,13 +33,15 @@ class PostController extends Controller
 
 
     public function getPost(){
-    	$data['post'] = DB::table('post')->join('cate', 'post.post_cate_id', '=', 'cate.cate_id')->orderBy('post_id', 'desc')->get();
+    	$data['post'] = DB::table('post2')->join('cate2', 'post2.post_cate_id', '=', 'cate2.cate_id')->orderBy('post_id', 'desc')->get();
         // dd($data['post']);
     	return view('admin.post.post', $data);
     }
 
     public function getAddPost(){
     	$parent_cate = Cate::where('parent_cate_id', 0)->get();
+        // dd($parent_cate);
+        $cate_sub_id = array();
         foreach ($parent_cate as $cate) {
             $cate_sub_id[] = Cate::where('parent_cate_id', $cate->cate_id)->get();
         }
@@ -57,7 +59,6 @@ class PostController extends Controller
     	$post->post_status = $request->post_status;
     	$post->post_featured = $request->post_featured;
     	$post->post_content = $request->post_content;
-        $post->post_content_slug = Str::slug($request->post_content);
     	$post->meta_key = $request->meta_key;
     	$post->meta_desc = $request->meta_desc;
     	$post->post_cate_id = $request->post_cate_id;
@@ -93,9 +94,15 @@ class PostController extends Controller
     }
 
     public function getEditPost($id){
-    	$data['post'] = Post::find($id);
-    	$data['cate'] = Cate::all();
-    	return view('admin.post.edit_post', $data);
+
+        $parent_cate = Cate::where('parent_cate_id', 0)->get();
+        foreach ($parent_cate as $cate) {
+            $cate_sub_id[] = Cate::where('parent_cate_id', $cate->cate_id)->get();
+        }
+
+    	$post = Post::find($id);
+    	$cate = Cate::all();
+    	return view('admin.post.edit_post', compact(['parent_cate', 'cate_sub_id', 'post', 'cate']));
     }
     public function postEditPost(Request $request, $id){
     	$post = new Post;
@@ -106,7 +113,6 @@ class PostController extends Controller
     	$arr['post_status'] = $request->post_status;
     	$arr['post_featured'] = $request->post_featured;
     	$arr['post_content'] = $request->post_content;
-        $arr['post_content_slug'] = Str::slug($request->post_content);
     	$arr['meta_key'] = $request->meta_key;
     	$arr['meta_desc'] = $request->meta_desc;
     	$arr['post_cate_id'] = $request->post_cate_id;
@@ -119,7 +125,7 @@ class PostController extends Controller
                 return redirect('admin/post/add')->with('loi', 'Vui Long Up Anh');
             }
             
-            $path_image_del = 'public/upload/post'. $post_detail['post_image'];
+            $path_image_del = 'public/upload/post/'. $post_detail['post_image'];
             if(File::exists($path_image_del)) {
 	            File::delete($path_image_del);
 	        }
@@ -131,7 +137,7 @@ class PostController extends Controller
 
 
             $source->toFile($path);
-            $post->post_image = $names;
+            $arr['post_image'] = $names;
             // $post->image_link = url('public')."/upload/post/".$names;
 
         }else{

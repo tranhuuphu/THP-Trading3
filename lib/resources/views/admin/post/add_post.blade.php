@@ -31,30 +31,7 @@
 										<label><strong>Tiêu Đề Bài Viết</strong></label>
 										<input required type="text" name="post_title" class="form-control" value="{{old('post_title')}}">
 									</div>
-									<hr>
-
-									<div class="form-group" >
-										<label>Lựa Chọn Menu Cho Bài Viết</label>
-
-										<select required name="post_cate_id" class="custom-select form-control">
-											@foreach($parent_cate as $c)
-												<?php
-													$cate_sub_exists = DB::table('cate')->where('parent_cate_id', $c->cate_id)->first();
-													$cate_sub_exists2 = DB::table('cate')->where('parent_cate_id', $c->cate_id)->get();
-												?>
-												@if(!isset($cate_sub_exists))
-													<option value="{{$c->cate_id}}">{{$c->cate_name}}</option>
-												@else
-													<optgroup label="{{$c->cate_name}}">
-														@foreach($cate_sub_exists2 as $c2)
-															<option value="{{$c2->cate_id}}" style="background: #f5f5f5; text-transform: capitalize;">&#xf35a; {{$c2->cate_name}}</option>
-														@endforeach
-													</optgroup>
-												@endif
-											@endforeach
-
-					                    </select>
-									</div>
+									
 									<hr>
 									<style type="text/css">
 										select {
@@ -110,6 +87,31 @@
 										<label>Bài viết nổi bật</label><br>
 										Có: <input type="radio" name="post_featured" value="1">
 										Không: <input type="radio" checked name="post_featured" value="0">
+									</div>
+
+									<hr>
+
+									<div class="form-group" >
+										<label>Lựa Chọn Menu Cho Bài Viết</label>
+
+										<select required name="post_cate_id" class="custom-select form-control">
+											@foreach($parent_cate as $c)
+												<?php
+													$cate_sub_exists = DB::table('cate2')->where('parent_cate_id', $c->cate_id)->first();
+													$cate_sub_exists2 = DB::table('cate2')->where('parent_cate_id', $c->cate_id)->get();
+												?>
+												@if(!isset($cate_sub_exists))
+													<option value="{{$c->cate_id}}">{{$c->cate_name}}</option>
+												@else
+													<optgroup label="{{$c->cate_name}}">
+														@foreach($cate_sub_exists2 as $c2)
+															<option value="{{$c2->cate_id}}" style="background: #f5f5f5; text-transform: capitalize;">&#xf35a; {{$c2->cate_name}}</option>
+														@endforeach
+													</optgroup>
+												@endif
+											@endforeach
+
+					                    </select>
 									</div>
 									<hr>
 

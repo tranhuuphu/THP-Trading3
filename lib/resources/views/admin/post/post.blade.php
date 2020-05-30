@@ -59,7 +59,7 @@
 												<img width="200px" src="{{asset('public/upload/post/'.$p->post_image)}}" class="thumbnail">
 											</td>
 											<td>
-												<a href="{{asset('admin/post/edit/'.$p->post_id)}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
+												<a href="{{asset('admin/post/edit/'.$p->post_id)}}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> Sửa</a>
 												<a href="{{asset('admin/post/delete/'.$p->post_id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
 											</td>
                                         </tr>

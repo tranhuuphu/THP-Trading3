@@ -16,19 +16,28 @@ class SiteController extends Controller
     //
     public function getHome(){
 
+        $carousel = null;
+        $featured = null;
+        $home_meta = null;
+        $recent = null;
+
         $carousel = Carousel::orderBy('id', 'desc')->take(6)->get();
         
     	$featured = Post::where('post_featured', 1)->orderBy('post_id', 'desc')->take(4)->get();
 
         $home_meta = Page::where('page_status', 1)->first();
-        
+
+        $notIn = array();
         foreach($featured as $ft){
             $notIn[] = $ft['post_id'];
         }
-
-        $recent = DB::table('post')->orderBy('post_id', 'desc')->whereNotIn('post_id', $notIn)->get();
         
-    	return view('site.home', ['featured'=>$featured, 'recent'=>$recent, 'home_meta' => $home_meta, 'carousel'=>$carousel]);
+        
+        if($notIn != null){
+            $recent = DB::table('post2')->orderBy('post_id', 'desc')->whereNotIn('post_id', $notIn)->get();
+        }
+        
+    	return view('site.home', compact('featured', 'recent', 'home_meta', 'carousel'));
 
     	
     }
@@ -73,6 +82,8 @@ class SiteController extends Controller
         $post_slug = implode("-", $id_array);
 
         $post_detail = Post::find($id);
+        // dd($id);
+        dd($post_detail);
 
         if(!$post_detail || $post_detail == null){
             return view('notice.404');
@@ -93,13 +104,15 @@ class SiteController extends Controller
 
         $cate_slug = $cate_data->cate_slug;
         
-        if($cate_data == null || !isset($cate_data)){
-            return redirect(asset(''.'/uncategory/'.$post_slug_2.'-'.$id.'.html'));
+        if($cate_slug == null && !isset($cate_slug)){
+            return redirect(asset(''.'uncategory/'.$post_slug_2.'-'.$id.'.html'));
+            return false;
         }
 
 
         if($post_slug != $post_slug_2 || $cate != $cate_slug || $id_check_count != $id_check_count2){
             return redirect(asset(''.$cate_slug.'/'.$post_slug_2.'-'.$id.'.html'));
+            return false;
         }
 
         // related

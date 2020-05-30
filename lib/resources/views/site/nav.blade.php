@@ -28,12 +28,14 @@
         <ul class="main-menu mobile-menu">
 
 
-
+            <style type="text/css">
+                .fa{border-radius: 0 !important}
+            </style>
 
             @foreach($cate as $c)
             <li><a href="{{$c->cate_slug}}" title="{{$c->cate_name}}">{{$c->cate_name}}</a>
                 <?php
-                    $sub_exist = DB::table('cate')->where('parent_cate_id', $c->cate_id)->first();
+                    $sub_exist = DB::table('cate2')->where('parent_cate_id', $c->cate_id)->first();
                 ?>
                 @if(isset($sub_exist))
                     <ul class="dropdown">
@@ -102,7 +104,7 @@
                                     <li>
                                         <a href="{{$c->cate_slug}}" title="{{$c->cate_name}}">{{$c->cate_name}}
                                             <?php
-                                                $sub_exist = DB::table('cate')->where('parent_cate_id', $c->cate_id)->first();
+                                                $sub_exist = DB::table('cate2')->where('parent_cate_id', $c->cate_id)->first();
                                             ?>
                                             @if(isset($sub_exist))
                                                 <i class='fa fa-angle-down' aria-hidden='true'></i>
@@ -114,7 +116,7 @@
                                         
                                             @foreach($cate2 as $c2)
                                                 @if($c2->parent_cate_id == $c->cate_id)
-                                                    <li><a href="{{$c->cate_slug}}" title="{{$c->cate_name}}">{{$c2->cate_name}}</a></li>
+                                                    <li><a href="{{$c2->cate_slug}}" title="{{$c2->cate_name}}">{{$c2->cate_name}}</a></li>
                                                 @endif
                                             @endforeach
                                         
