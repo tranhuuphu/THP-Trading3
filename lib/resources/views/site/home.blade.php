@@ -189,48 +189,32 @@
             <div class="row">
                 <div class="col-lg-12 p-0">
                     <div class="section-title">
-                        <h3>Soccer <span>Feed</span></h3>
+                        <h3>Bài Viết <span>Nổi Bật</span></h3>
                     </div>
                 </div>
             </div>
             <div class="row">
+                @foreach($featured as $ft)
                 <div class="col-lg-3 col-sm-6 p-0">
-                    <div class="soccer-item set-bg" data-setbg="public/upload/img/soccer/soccer-1.jpg">
-                        <div class="si-tag">Soccer</div>
-                        <div class="si-text">
-                            <h5><a href="#">Counting Your Chicken Before They Hatch</a></h5>
-                            <ul>
-                                <li><i class="fa fa-calendar"></i> May 19, 2019</li>
-                                <li><i class="fa fa-edit"></i> 3 Comment</li>
-                            </ul>
-                        </div>
+                    <div class="soccer-item set-bg" data-setbg="{{asset('/public/upload/post/'.$ft->post_image)}}" alt = "{{$ft->post_title}}">
+                        @foreach($cate3 as $ct)
+                            @if($ct->cate_id == $ft->post_cate_id)
+                                <div class="si-tag">{{$ct->cate_name}}</div>
+                                <div class="si-text">
+                                    <h5><a href="{{asset('/'.$ct->cate_slug.'/'.$ft->post_slug.'-'.$ft->post_id.'.html')}}" title="{{$ft->post_title}}">{{$ft->post_title}}</a></h5>
+                                    <ul>
+                                        {{-- <li><i class="fa fa-calendar"></i> May 19, 2019</li> --}}
+                                        {{-- <li><i class="fa fa-edit"></i> 3 Comment</li> --}}
+                                    </ul>
+                                </div>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 p-0">
-                    <div class="soccer-item set-bg" data-setbg="public/upload/img/soccer/soccer-2.jpg">
-                        <div class="si-tag">Soccer</div>
-                        <div class="si-text">
-                            <h5><a href="#">Hypnotherapy For Motivation Getting The Drive Back</a></h5>
-                            <ul>
-                                <li><i class="fa fa-calendar"></i> May 19, 2019</li>
-                                <li><i class="fa fa-edit"></i> 3 Comment</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 p-0">
-                    <div class="soccer-item set-bg" data-setbg="public/upload/img/soccer/soccer-3.jpg">
-                        <div class="si-tag">Soccer</div>
-                        <div class="si-text">
-                            <h5><a href="#">Astronomy Binoculars A Great Alternative</a></h5>
-                            <ul>
-                                <li><i class="fa fa-calendar"></i> May 19, 2019</li>
-                                <li><i class="fa fa-edit"></i> 3 Comment</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 p-0">
+                @endforeach
+
+
+                {{-- <div class="col-lg-3 col-sm-6 p-0">
                     <div class="soccer-item set-bg" data-setbg="public/upload/img/soccer/soccer-4.jpg">
                         <div class="si-tag">Soccer</div>
                         <div class="si-text">
@@ -241,7 +225,8 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> --}}
+
             </div>
         </div>
     </section>
