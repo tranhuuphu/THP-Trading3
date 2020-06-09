@@ -83,7 +83,7 @@ class SiteController extends Controller
 
         $post_detail = Post::find($id);
         // dd($id);
-        dd($post_detail);
+        // dd($post_detail);
 
         if(!$post_detail || $post_detail == null){
             return view('notice.404');

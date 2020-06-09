@@ -1,5 +1,5 @@
 {{-- Breadcrum --}}
-<div class="container">
+<div class="container-fluid">
 	<nav aria-label="breadcrumb" style="margin: 30px 0;">
 	  <ol class="breadcrumb" style="border-radius: 0;">
 	  	

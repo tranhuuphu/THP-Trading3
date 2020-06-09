@@ -2,8 +2,9 @@
 
 @section('content')
 
-    <!-- Hero Section Begin -->
-    <section class="hero-section set-bg" data-setbg="public/upload/img/hero/hero-1.jpg">
+
+
+{{--     <section class="hero-section set-bg" data-setbg="public/upload/img/hero/hero-1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -23,165 +24,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Hero Section End -->
 
-    <!-- Trending News Section Begin -->
-    <div class="trending-news-section">
-        <div class="container">
-            <div class="tn-title"><i class="fa fa-caret-right"></i> Trending News</div>
-            <div class="news-slider owl-carousel">
-                <div class="nt-item">Vinyl Banners With Its Different Types Kinds And Applications</div>
-                <div class="nt-item">Banners With Its Different Types Kinds And Applications</div>
-            </div>
-        </div>
-    </div>
-    <!-- Trending News Section End -->
 
-    <!-- Match Section Begin -->
-    <section class="match-section set-bg" data-setbg="public/upload/img/match/match-bg.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="ms-content">
-                        <h4>Next Match</h4>
-                        <div class="mc-table">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="left-team">
-                                            <img src="public/upload/img/match/tf-1.jpg" alt="">
-                                            <h6>Cambodia</h6>
-                                        </td>
-                                        <td class="mt-content">
-                                            <div class="mc-op">Ucraina vs England</div>
-                                            <h4>VS</h4>
-                                            <div class="mc-op">15 September 2019</div>
-                                        </td>
-                                        <td class="right-team">
-                                            <img src="public/upload/img/match/tf-2.jpg" alt="">
-                                            <h6>Qatar</h6>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="mc-table">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="left-team">
-                                            <img src="public/upload/img/match/tf-3.jpg" alt="">
-                                            <h6>Australia</h6>
-                                        </td>
-                                        <td class="mt-content">
-                                            <div class="mc-op">Ucraina vs England</div>
-                                            <h4>VS</h4>
-                                            <div class="mc-op">15 September 2019</div>
-                                        </td>
-                                        <td class="right-team">
-                                            <img src="public/upload/img/match/tf-4.jpg" alt="">
-                                            <h6>Iraq</h6>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="mc-table">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="left-team">
-                                            <img src="public/upload/img/match/tf-5.jpg" alt="">
-                                            <h6>Ucraina</h6>
-                                        </td>
-                                        <td class="mt-content">
-                                            <div class="mc-op">Ucraina vs England</div>
-                                            <h4>VS</h4>
-                                            <div class="mc-op">15 September 2019</div>
-                                        </td>
-                                        <td class="right-team">
-                                            <img src="public/upload/img/match/tf-6.jpg" alt="">
-                                            <h6>Jordan</h6>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="ms-content">
-                        <h4>Recent Results</h4>
-                        <div class="mc-table">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="left-team">
-                                            <img src="public/upload/img/match/tf-1.jpg" alt="">
-                                            <h6>Darussalam</h6>
-                                        </td>
-                                        <td class="mt-content">
-                                            <div class="mc-op">Ucraina vs England</div>
-                                            <h4>1 : 2</h4>
-                                            <div class="mc-op">15 September 2019</div>
-                                        </td>
-                                        <td class="right-team">
-                                            <img src="public/upload/img/match/tf-2.jpg" alt="">
-                                            <h6>Ucraina</h6>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="mc-table">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="left-team">
-                                            <img src="public/upload/img/match/tf-3.jpg" alt="">
-                                            <h6>Japan</h6>
-                                        </td>
-                                        <td class="mt-content">
-                                            <div class="mc-op">Ucraina vs England</div>
-                                            <h4>1 : 2</h4>
-                                            <div class="mc-op">15 September 2019</div>
-                                        </td>
-                                        <td class="right-team">
-                                            <img src="public/upload/img/match/tf-4.jpg" alt="">
-                                            <h6>Philippines</h6>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="mc-table">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="left-team">
-                                            <img src="public/upload/img/match/tf-5.jpg" alt="">
-                                            <h6>Kyrgyz</h6>
-                                        </td>
-                                        <td class="mt-content">
-                                            <div class="mc-op">Ucraina vs England</div>
-                                            <h4>1 : 2</h4>
-                                            <div class="mc-op">15 September 2019</div>
-                                        </td>
-                                        <td class="right-team">
-                                            <img src="public/upload/img/match/tf-6.jpg" alt="">
-                                            <h6 class="mi-right">Pakistan</h6>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Match Section End -->
+
 
     <!-- Soccer Section Begin -->
     <section class="soccer-section">
@@ -213,20 +60,6 @@
                 </div>
                 @endforeach
 
-
-                {{-- <div class="col-lg-3 col-sm-6 p-0">
-                    <div class="soccer-item set-bg" data-setbg="public/upload/img/soccer/soccer-4.jpg">
-                        <div class="si-tag">Soccer</div>
-                        <div class="si-text">
-                            <h5><a href="#">Decorate For Less With Art Posters</a></h5>
-                            <ul>
-                                <li><i class="fa fa-calendar"></i> May 19, 2019</li>
-                                <li><i class="fa fa-edit"></i> 3 Comment</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div> --}}
-
             </div>
         </div>
     </section>
@@ -235,198 +68,202 @@
     <!-- Latest Section Begin -->
     <section class="latest-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="section-title latest-title">
-                        <h3>Latest <span>News</span></h3>
-                        <ul>
-                            <li>All</li>
-                            <li>World Cup</li>
-                            <li>Champions</li>
-                            <li>MLS</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="news-item left-news">
-                                <div class="ni-pic set-bg" data-setbg="public/upload/img/news/latest-b.jpg">
-                                    <div class="ni-tag">Soccer</div>
+            @foreach($cate as $ct)
+                <?php
+                    $id = $ct->cate_id;
+                    $sub_test = DB::table('cate2')->where('parent_cate_id', $id)->first();
+                    $sub = DB::table('cate2')->where('parent_cate_id', $id)->get();
+                    if($sub_test != null){
+                        foreach($sub as $s){
+                            $sub_cate_id[] = $s->cate_id;
+                        }
+
+                        $data_cate = DB::table('cate2')->join('post2','cate2.cate_id','=','post2.post_cate_id')->whereIn('post_cate_id', $sub_cate_id)->take(5)->get();
+
+                    }else{
+                        
+                        $data_cate = DB::table('cate2')->join('post2','cate2.cate_id','=','post2.post_cate_id')->where('post_cate_id', $id)->take(5)->get();
+                    }
+
+                    $data_cate_i = $data_cate->shift();
+                    $data_cate_ii = $data_cate->all();
+                ?>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="section-title latest-title">
+                            <h3><span><a href="{{asset('/'.$ct->cate_slug)}}">{{$ct->cate_name}}</a></span></h3>
+                            <ul>
+                                @foreach($cate2 as $ct2)
+                                    @if($ct2->parent_cate_id == $ct->cate_id)
+                                        <li><a href="{{asset('/'.$ct2->cate_slug)}}">{{$ct2->cate_name}}</a></li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="news-item left-news">
+                                    <div class="ni-pic set-bg" data-setbg="{{asset('public/upload/post/'.$data_cate_i->post_image)}}" alt = '{{$data_cate_i->post_title}}'>
+                                        {{-- <div class="ni-tag">Soccer</div> --}}
+                                    </div>
+                                    <div class="ni-text">
+                                        <h4><a href="{{asset('/'.$data_cate_i->cate_slug.'/'.$data_cate_i->post_slug.'-'.$data_cate_i->cate_id.'.html')}}" title="{{$data_cate_i->post_title}}">{{$data_cate_i->post_title}}</a></h4>
+                                        <ul>
+                                            <li><i class="fa fa-calendar"></i> May 19, 2019</li>
+                                            <li><i class="fa fa-edit"></i> 3 Comment</li>
+                                        </ul>
+                                        <p>{{$data_cate_i->post_intro}}</p>
+                                    </div>
                                 </div>
-                                <div class="ni-text">
-                                    <h4><a href="#">Once You Learn These Hard Truths About Life, You'll Become</a></h4>
-                                    <ul>
-                                        <li><i class="fa fa-calendar"></i> May 19, 2019</li>
-                                        <li><i class="fa fa-edit"></i> 3 Comment</li>
-                                    </ul>
-                                    <p>It’s that time again when people start thinking about their New Years
-                                        Resolutions. Usually they involve, losing weight, quitting smoking, and joining
-                                        a gym, just to mention a few.</p>
-                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                @foreach($data_cate_ii as $d_ii)
+                                    <div class="news-item">
+                                        <div class="ni-pic">
+                                            <img src="{{asset('public/upload/post/'.$d_ii->post_image)}}" alt="{{$d_ii->post_title}}">
+                                        </div>
+                                        <div class="ni-text">
+                                            <h5><a href="{{asset('/'.$d_ii->cate_slug.'/'.$d_ii->post_slug.'-'.$d_ii->cate_id.'.html')}}" title="{{$d_ii->post_title}}">{{$d_ii->post_title}}</a></h5>
+                                            <ul>
+                                                <li><i class="fa fa-calendar"></i> May 19, 2019</li>
+                                                <li><i class="fa fa-edit"></i> 3 Comment</li>
+                                                <p>{{$d_ii->post_intro}}</p>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                @endforeach
+
+                                {{-- <div class="news-item">
+                                    <div class="ni-pic">
+                                        <img src="public/upload/img/news/ln-2.jpg" alt="">
+                                    </div>
+                                    <div class="ni-text">
+                                        <h5><a href="#">Decorate For Less With Art Posters</a></h5>
+                                        <ul>
+                                            <li><i class="fa fa-calendar"></i> May 19, 2019</li>
+                                            <li><i class="fa fa-edit"></i> 3 Comment</li>
+                                        </ul>
+                                    </div>
+                                </div> --}}
+                                
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="news-item">
-                                <div class="ni-pic">
-                                    <img src="public/upload/img/news/ln-1.jpg" alt="">
-                                </div>
-                                <div class="ni-text">
-                                    <h5><a href="#">How To Quit Smoking Using Zyban</a></h5>
-                                    <ul>
-                                        <li><i class="fa fa-calendar"></i> May 19, 2019</li>
-                                        <li><i class="fa fa-edit"></i> 3 Comment</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="news-item">
-                                <div class="ni-pic">
-                                    <img src="public/upload/img/news/ln-2.jpg" alt="">
-                                </div>
-                                <div class="ni-text">
-                                    <h5><a href="#">Decorate For Less With Art Posters</a></h5>
-                                    <ul>
-                                        <li><i class="fa fa-calendar"></i> May 19, 2019</li>
-                                        <li><i class="fa fa-edit"></i> 3 Comment</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="news-item">
-                                <div class="ni-pic">
-                                    <img src="public/upload/img/news/ln-3.jpg" alt="">
-                                </div>
-                                <div class="ni-text">
-                                    <h5><a href="#">Home Business Advertising Ideas</a></h5>
-                                    <ul>
-                                        <li><i class="fa fa-calendar"></i> May 19, 2019</li>
-                                        <li><i class="fa fa-edit"></i> 3 Comment</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="news-item">
-                                <div class="ni-pic">
-                                    <img src="public/upload/img/news/ln-4.jpg" alt="">
-                                </div>
-                                <div class="ni-text">
-                                    <h5><a href="#">Lasik Doesn T Stop Your Eyes From Aging</a></h5>
-                                    <ul>
-                                        <li><i class="fa fa-calendar"></i> May 19, 2019</li>
-                                        <li><i class="fa fa-edit"></i> 3 Comment</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="section-title">
+                            <h3>Club <span>Ranking</span></h3>
+                        </div>
+                        <div class="points-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="th-o">Pos</th>
+                                        <th>Team</th>
+                                        <th class="th-o">P</th>
+                                        <th class="th-o">W</th>
+                                        <th class="th-o">L</th>
+                                        <th class="th-o">PTS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="team-name">
+                                            <img src="public/upload/img/flag/flag-1.jpg" alt="">
+                                            <span>Afghanis</span>
+                                        </td>
+                                        <td>22</td>
+                                        <td>2</td>
+                                        <td>5</td>
+                                        <td>72</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td class="team-name">
+                                            <img src="public/upload/img/flag/flag-2.jpg" alt="">
+                                            <span>Australia</span>
+                                        </td>
+                                        <td>20</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>71</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td class="team-name">
+                                            <img src="public/upload/img/flag/flag-3.jpg" alt="">
+                                            <span>Qatar</span>
+                                        </td>
+                                        <td>18</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>68</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td class="team-name">
+                                            <img src="public/upload/img/flag/flag-4.jpg" alt="">
+                                            <span>Cambodia</span>
+                                        </td>
+                                        <td>17</td>
+                                        <td>2</td>
+                                        <td>7</td>
+                                        <td>64</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td class="team-name">
+                                            <img src="public/upload/img/flag/flag-5.jpg" alt="">
+                                            <span>Uzbekistan</span>
+                                        </td>
+                                        <td>17</td>
+                                        <td>2</td>
+                                        <td>6</td>
+                                        <td>60</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td class="team-name">
+                                            <img src="public/upload/img/flag/flag-6.jpg" alt="">
+                                            <span>Turkme</span>
+                                        </td>
+                                        <td>161</td>
+                                        <td>1</td>
+                                        <td>8</td>
+                                        <td>57</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td class="team-name">
+                                            <img src="public/upload/img/flag/flag-7.jpg" alt="">
+                                            <span>Sri Lanka</span>
+                                        </td>
+                                        <td>15</td>
+                                        <td>4</td>
+                                        <td>8</td>
+                                        <td>52</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td class="team-name">
+                                            <img src="public/upload/img/flag/flag-8.jpg" alt="">
+                                            <span>Myanmar</span>
+                                        </td>
+                                        <td>14</td>
+                                        <td>3</td>
+                                        <td>7</td>
+                                        <td>48</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="#" class="p-all">View All</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="section-title">
-                        <h3>Club <span>Ranking</span></h3>
-                    </div>
-                    <div class="points-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="th-o">Pos</th>
-                                    <th>Team</th>
-                                    <th class="th-o">P</th>
-                                    <th class="th-o">W</th>
-                                    <th class="th-o">L</th>
-                                    <th class="th-o">PTS</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td class="team-name">
-                                        <img src="public/upload/img/flag/flag-1.jpg" alt="">
-                                        <span>Afghanis</span>
-                                    </td>
-                                    <td>22</td>
-                                    <td>2</td>
-                                    <td>5</td>
-                                    <td>72</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td class="team-name">
-                                        <img src="public/upload/img/flag/flag-2.jpg" alt="">
-                                        <span>Australia</span>
-                                    </td>
-                                    <td>20</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>71</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td class="team-name">
-                                        <img src="public/upload/img/flag/flag-3.jpg" alt="">
-                                        <span>Qatar</span>
-                                    </td>
-                                    <td>18</td>
-                                    <td>4</td>
-                                    <td>4</td>
-                                    <td>68</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td class="team-name">
-                                        <img src="public/upload/img/flag/flag-4.jpg" alt="">
-                                        <span>Cambodia</span>
-                                    </td>
-                                    <td>17</td>
-                                    <td>2</td>
-                                    <td>7</td>
-                                    <td>64</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td class="team-name">
-                                        <img src="public/upload/img/flag/flag-5.jpg" alt="">
-                                        <span>Uzbekistan</span>
-                                    </td>
-                                    <td>17</td>
-                                    <td>2</td>
-                                    <td>6</td>
-                                    <td>60</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td class="team-name">
-                                        <img src="public/upload/img/flag/flag-6.jpg" alt="">
-                                        <span>Turkme</span>
-                                    </td>
-                                    <td>161</td>
-                                    <td>1</td>
-                                    <td>8</td>
-                                    <td>57</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td class="team-name">
-                                        <img src="public/upload/img/flag/flag-7.jpg" alt="">
-                                        <span>Sri Lanka</span>
-                                    </td>
-                                    <td>15</td>
-                                    <td>4</td>
-                                    <td>8</td>
-                                    <td>52</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td class="team-name">
-                                        <img src="public/upload/img/flag/flag-8.jpg" alt="">
-                                        <span>Myanmar</span>
-                                    </td>
-                                    <td>14</td>
-                                    <td>3</td>
-                                    <td>7</td>
-                                    <td>48</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <a href="#" class="p-all">View All</a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
+
         </div>
     </section>
     <!-- Latest Section End -->
@@ -443,17 +280,17 @@
             </div>
             <div class="row">
                 <div class="video-slider owl-carousel">
-                    <div class="col-lg-3">
+                    <div class="col-lg-12">
                         <div class="video-item set-bg" data-setbg="public/upload/img/videos/video-1.jpg">
                             <div class="vi-title">
                                 <h5>A World Of Infinite Opportunities</h5>
                             </div>
-                            <a href="https://www.youtube.com/watch?v=dhYOPzcsbGM" class="play-btn video-popup"><img
+                            <a href="#" class="play-btn video-popup"><img
                                     src="public/upload/img/videos/play.png" alt=""></a>
                             <div class="vi-time">11:13</div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-12">
                         <div class="video-item set-bg" data-setbg="public/upload/img/videos/video-2.jpg">
                             <div class="vi-title">
                                 <h5>Video Games Playing With Imagination</h5>
@@ -463,7 +300,7 @@
                             <div class="vi-time">11:13</div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-12">
                         <div class="video-item set-bg" data-setbg="public/upload/img/videos/video-3.jpg">
                             <div class="vi-title">
                                 <h5>Home Audio Recording For Everyone</h5>
@@ -473,7 +310,7 @@
                             <div class="vi-time">11:13</div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-12">
                         <div class="video-item set-bg" data-setbg="public/upload/img/videos/video-4.jpg">
                             <div class="vi-title">
                                 <h5>What If They Let You Run The Hubble</h5>
@@ -483,16 +320,7 @@
                             <div class="vi-time">11:13</div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="video-item set-bg" data-setbg="public/upload/img/videos/video-4.jpg">
-                            <div class="vi-title">
-                                <h5>What If They Let You Run The Hubble</h5>
-                            </div>
-                            <a href="https://www.youtube.com/watch?v=dhYOPzcsbGM" class="play-btn video-popup"><img
-                                    src="public/upload/img/videos/play.png" alt=""></a>
-                            <div class="vi-time">11:13</div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
