@@ -348,9 +348,9 @@
 	{{-- <script src="public/site_asset/js/main.js"></script> --}}
 
     <script src="public/site_asset/js/jquery.magnific-popup.min.js"></script>
-    <script src="public/site_asset/js/jquery.slicknav.js"></script>
+    <script src="public/site_asset/js/jquery.slicknav.js?v=<?php echo time(); ?>"></script>
     <script src="public/site_asset/js/owl.carousel.min.js"></script>
-    <script src="public/site_asset/js/main.js"></script>
+    <script src="public/site_asset/js/main.js?v=<?php echo time(); ?>"></script>
 
 
 

@@ -28,9 +28,6 @@
         <ul class="main-menu mobile-menu">
 
 
-            <style type="text/css">
-                .fa{border-radius: 0 !important}
-            </style>
 
             @foreach($cate as $c)
             <li><a href="{{$c->cate_slug}}" title="{{$c->cate_name}}">{{$c->cate_name}}</a>
@@ -59,7 +56,7 @@
     <!-- Offcanvas Menu Section End -->
 
     <!-- Header Section Begin -->
-    <header class="header-section">
+    <header class="header-section ">
         <div class="header__top">
             <div class="container">
                 <div class="row">
@@ -87,7 +84,7 @@
                 </div>
             </div>
         </div>
-        <div class="header__nav">
+        <div class="header__nav header-sticky">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-2">

@@ -31,14 +31,14 @@
         prefix = 'slicknav',
 
         Keyboard = {
-            DOWN: 40,
+            DOWN: 10,
             ENTER: 13,
             ESCAPE: 27,
             LEFT: 37,
             RIGHT: 39,
             SPACE: 32,
             TAB: 9,
-            UP: 38,
+            UP: 18,
         };
 
     function Plugin(element, options) {

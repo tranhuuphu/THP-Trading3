@@ -28,6 +28,149 @@
     <!-- Hero Section End -->
 
 
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__item">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 p-0">
+                            <div class="hero__inside__item hero__inside__item--wide set-bg"
+                                data-setbg="https://cdn.august.com.au/wp-content/uploads/2018/03/The-Bystander-Effect_Header-1-e1534393505129.png">
+                                <div class="hero__inside__item__text">
+                                    <div class="hero__inside__item--meta">
+                                        <span>08</span>
+                                        <p>Aug</p>
+                                    </div>
+                                    <div class="hero__inside__item--text">
+                                        <ul class="label">
+                                            <li>Vegan</li>
+                                            <li>Desserts</li>
+                                        </ul>
+                                        <h4>Vegan White Peach Mug Cobbler With CardamomVegan<br /> White Peach Mug
+                                            Cobbler With Cardamom</h4>
+                                        <ul class="widget">
+                                            <li>by <span>Admin</span></li>
+                                            <li>3 min read</li>
+                                            <li>20 Comment</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6  p-0">
+                            <div class="hero__inside__item hero__inside__item--small set-bg"
+                                data-setbg="https://bd.gaadicdn.com/processedimages/hero/passion-pro-110/640X309/passion-pro-1105e5ddc9cb77f7.jpg">
+                                <div class="hero__inside__item__text">
+                                    <div class="hero__inside__item--meta">
+                                        <span>08</span>
+                                        <p>Aug</p>
+                                    </div>
+                                    <div class="hero__inside__item--text">
+                                        <ul class="label">
+                                            <li>Vegan</li>
+                                            <li>Desserts</li>
+                                        </ul>
+                                        <h5>How to Make a Milkshake With Any <br />Ice Cream, Any Toppings...</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero__inside__item hero__inside__item--small set-bg"
+                                data-setbg="https://bd.gaadicdn.com/processedimages/hero-motocorp/hero-motocorp-super-splendor/640X309/hero-motocorp-super-splendor5e5f6127a7470.jpg">
+                                <div class="hero__inside__item__text">
+                                    <div class="hero__inside__item--meta">
+                                        <span>08</span>
+                                        <p>Aug</p>
+                                    </div>
+                                    <div class="hero__inside__item--text">
+                                        <ul class="label">
+                                            <li>Vegan</li>
+                                            <li>Desserts</li>
+                                        </ul>
+                                        <h5>Vintage Copper Preserve Pan with <br />Brass Handles, Mid 19th Century</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6  p-0">
+                            <div class="hero__inside__item set-bg" data-setbg="https://gaadiwaadi.com/wp-content/uploads/2019/07/Hero-HF-Deluxe-Beats-Splendor-Plus-e1564581227807.jpg">
+                                <div class="hero__inside__item__text">
+                                    <div class="hero__inside__item--meta">
+                                        <span>08</span>
+                                        <p>Aug</p>
+                                    </div>
+                                    <div class="hero__inside__item--text">
+                                        <ul class="label">
+                                            <li>Vegan</li>
+                                            <li>Desserts</li>
+                                        </ul>
+                                        <h5>Marinated Lentil Salad with Zucch <br />ini and Tomatoes</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Hero Section End -->
+    <style type="text/css">
+        .heading {
+          line-height: 1.5;
+          margin: 0;
+          padding: 0;
+          font-size: 20px;
+          font-weight: 300;
+        }
+        .media-body p{
+            padding: 1rem 0;
+            line-height: 1.5em;
+        }
+
+    </style>
+    {{-- Intro --}}
+    <section class="section bg-light" style="background-color: #f8f9fa; padding: 3em 0">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 element-animate ">
+            <div class="media block-6 d-block text-center">
+              <div class="icon mb-3"><i class="fa fa-bell-o fa-3x" aria-hidden="true"></i></div>
+              <div class="media-body">
+                <h3 class="heading">Modern Design</h3>
+                
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div>  
+
+          </div>
+          <div class="col-md-6 col-lg-4 element-animate ">
+            <div class="media block-6 d-block text-center">
+              <div class="icon mb-3"><i class="fa fa-leaf fa-3x" aria-hidden="true"></i></div>
+              <div class="media-body">
+                <h3 class="heading">Build With Love</h3>
+                
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div> 
+
+          </div>
+          <div class="col-md-6 col-lg-4 element-animate ">
+            <div class="media block-6 d-block text-center">
+              <div class="icon mb-3"><i class="fa fa-bolt fa-3x" aria-hidden="true"></i></div>
+              <div class="media-body">
+                <h3 class="heading">Fast Loading</h3>
+                
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              </div>
+            </div> 
+
+          </div>
+        </div>
+      </div>
+    </section>
+
 
 
     <!-- Soccer Section Begin -->
@@ -152,113 +295,28 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="section-title">
-                            <h3>Club <span>Ranking</span></h3>
+                            <h3>Follow <span>Us</span></h3>
                         </div>
-                        <div class="points-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th class="th-o">Pos</th>
-                                        <th>Team</th>
-                                        <th class="th-o">P</th>
-                                        <th class="th-o">W</th>
-                                        <th class="th-o">L</th>
-                                        <th class="th-o">PTS</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td class="team-name">
-                                            <img src="public/upload/img/flag/flag-1.jpg" alt="">
-                                            <span>Afghanis</span>
-                                        </td>
-                                        <td>22</td>
-                                        <td>2</td>
-                                        <td>5</td>
-                                        <td>72</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td class="team-name">
-                                            <img src="public/upload/img/flag/flag-2.jpg" alt="">
-                                            <span>Australia</span>
-                                        </td>
-                                        <td>20</td>
-                                        <td>3</td>
-                                        <td>4</td>
-                                        <td>71</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td class="team-name">
-                                            <img src="public/upload/img/flag/flag-3.jpg" alt="">
-                                            <span>Qatar</span>
-                                        </td>
-                                        <td>18</td>
-                                        <td>4</td>
-                                        <td>4</td>
-                                        <td>68</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td class="team-name">
-                                            <img src="public/upload/img/flag/flag-4.jpg" alt="">
-                                            <span>Cambodia</span>
-                                        </td>
-                                        <td>17</td>
-                                        <td>2</td>
-                                        <td>7</td>
-                                        <td>64</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td class="team-name">
-                                            <img src="public/upload/img/flag/flag-5.jpg" alt="">
-                                            <span>Uzbekistan</span>
-                                        </td>
-                                        <td>17</td>
-                                        <td>2</td>
-                                        <td>6</td>
-                                        <td>60</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td class="team-name">
-                                            <img src="public/upload/img/flag/flag-6.jpg" alt="">
-                                            <span>Turkme</span>
-                                        </td>
-                                        <td>161</td>
-                                        <td>1</td>
-                                        <td>8</td>
-                                        <td>57</td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td class="team-name">
-                                            <img src="public/upload/img/flag/flag-7.jpg" alt="">
-                                            <span>Sri Lanka</span>
-                                        </td>
-                                        <td>15</td>
-                                        <td>4</td>
-                                        <td>8</td>
-                                        <td>52</td>
-                                    </tr>
-                                    <tr>
-                                        <td>8</td>
-                                        <td class="team-name">
-                                            <img src="public/upload/img/flag/flag-8.jpg" alt="">
-                                            <span>Myanmar</span>
-                                        </td>
-                                        <td>14</td>
-                                        <td>3</td>
-                                        <td>7</td>
-                                        <td>48</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <a href="#" class="p-all">View All</a>
+                        <div class="follow-links">
+                            <ul>
+                                <li class="facebook">
+                                    <i class="fa fa-facebook"></i>
+                                    <div class="fl-name">Facebook</div>
+                                    <span class="fl-fan">2.530 Fans</span>
+                                </li>
+                                <li class="twitter">
+                                    <i class="fa fa-twitter"></i>
+                                    <div class="fl-name">Twitter</div>
+                                    <span class="fl-fan">2.046 Fans</span>
+                                </li>
+                                <li class="google">
+                                    <i class="fa fa-google"></i>
+                                    <div class="fl-name">Google</div>
+                                    <span class="fl-fan">1.170 Fans</span>
+                                </li>
+                            </ul>
                         </div>
+
                     </div>
                 </div>
             @endforeach
@@ -268,64 +326,7 @@
     </section>
     <!-- Latest Section End -->
 
-    <!-- Video Section Begin -->
-    <section class="video-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h3>Hot <span>Videos</span></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="video-slider owl-carousel">
-                    <div class="col-lg-12">
-                        <div class="video-item set-bg" data-setbg="public/upload/img/videos/video-1.jpg">
-                            <div class="vi-title">
-                                <h5>A World Of Infinite Opportunities</h5>
-                            </div>
-                            <a href="#" class="play-btn video-popup"><img
-                                    src="public/upload/img/videos/play.png" alt=""></a>
-                            <div class="vi-time">11:13</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="video-item set-bg" data-setbg="public/upload/img/videos/video-2.jpg">
-                            <div class="vi-title">
-                                <h5>Video Games Playing With Imagination</h5>
-                            </div>
-                            <a href="https://www.youtube.com/watch?v=dhYOPzcsbGM" class="play-btn video-popup"><img
-                                    src="public/upload/img/videos/play.png" alt=""></a>
-                            <div class="vi-time">11:13</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="video-item set-bg" data-setbg="public/upload/img/videos/video-3.jpg">
-                            <div class="vi-title">
-                                <h5>Home Audio Recording For Everyone</h5>
-                            </div>
-                            <a href="https://www.youtube.com/watch?v=dhYOPzcsbGM" class="play-btn video-popup"><img
-                                    src="public/upload/img/videos/play.png" alt=""></a>
-                            <div class="vi-time">11:13</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="video-item set-bg" data-setbg="public/upload/img/videos/video-4.jpg">
-                            <div class="vi-title">
-                                <h5>What If They Let You Run The Hubble</h5>
-                            </div>
-                            <a href="https://www.youtube.com/watch?v=dhYOPzcsbGM" class="play-btn video-popup"><img
-                                    src="public/upload/img/videos/play.png" alt=""></a>
-                            <div class="vi-time">11:13</div>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Video Section End -->
 
     <!-- Popular News Section Begin -->
     <section class="popular-section">

@@ -2,7 +2,7 @@
     <footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="fs-logo">
                         <div class="logo">
                             <a href="./index.html"><img src="img/logo.png" alt=""></a>
@@ -21,28 +21,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 offset-lg-1">
+                <div class="col-lg-3 col-md-6">
                     <div class="fs-widget">
                         <h4>Top Club</h4>
                         <ul class="fw-links">
-                            <li><a href="#">Brazil</a></li>
-                            <li><a href="#">Germany</a></li>
-                            <li><a href="#">Italy</a></li>
-                            <li><a href="#">Argentina</a></li>
-                            <li><a href="#">France</a></li>
-                        </ul>
-                        <ul class="fw-links">
-                            <li><a href="#">England</a></li>
-                            <li><a href="#">Netherlands</a></li>
-                            <li><a href="#">Hungary</a></li>
-                            <li><a href="#">Croatia</a></li>
-                            <li><a href="#">Poland</a></li>
+                            @foreach($page as $p)
+								<li><a href="{{asset('/').$p->page_slug.'.html'}}" title="{{$p->page_title}}">{{$p->page_title}}</a></li>
+							@endforeach
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="fs-widget">
-                        <h4>Recent News</h4>
+                        <h4>Top Club</h4>
 
                         <div class="fw-item">
                             <h5><a href="#">England win shows they have the spark to go far at World Cup</a></h5>

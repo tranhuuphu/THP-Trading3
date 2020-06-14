@@ -57,57 +57,42 @@
         allowParentLinks: true
     });
 
+    $(window).on('scroll', function () {
+      var scroll = $(window).scrollTop();
+      if (scroll < 245) {
+        $(".header-sticky ").removeClass("sticky-bar");
+      } else {
+        $(".header-sticky").addClass("sticky-bar");
+      }
+    });
+        /*   Show img flex  */
+    $(window).on('scroll', function () {
+      var scroll = $(window).scrollTop();
+      if (scroll < 245) {
+        $(".header-flex").removeClass("sticky-flex");
+      } else {
+        $(".header-flex").addClass("sticky-flex");
+      }
+    });
+
+    $(window).on('scroll', function () {
+      var scroll = $(window).scrollTop();
+      if (scroll < 245) {
+          $(".header-sticky").removeClass("sticky");
+      } else {
+          $(".header-sticky").addClass("sticky");
+      }
+    });
+
 
     /*------------------
         News Slider
     --------------------*/
-    $(".news-slider").owlCarousel({
-        loop: true,
-        nav: true,
-        items: 1,
-        dots: false,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: true,
-        mouseDrag: false
-    });
+
 
     /*------------------------
 		Video Slider
     ----------------------- */
-    $(".video-slider").owlCarousel({
-        items: 4,
-        dots: false,
-        autoplay: false,
-        margin: 0,
-        loop: true,
-        smartSpeed: 1200,
-        nav: true,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        responsive: {
-            0: {
-                items: 1,
-            },
-            480: {
-                items: 2,
-            },
-            768: {
-                items: 3,
-            },
-            992: {
-                items: 4,
-            },
-        }
-    });
-
-    /*------------------
-        Magnific Popup
-    --------------------*/
-    $('.video-popup').magnificPopup({
-        type: 'iframe'
-    });
+   
 
 })(jQuery);
