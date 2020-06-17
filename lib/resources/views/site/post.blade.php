@@ -4,10 +4,149 @@
 
 
 	<?php
-		$post_1 = $post_cate->shift(1);
+
 		$post_2 = $post_cate->slice(0, 2);
 		$post_3 = $post_cate->slice(2,10);
 	?>
+
+
+	<!-- Popular News Section Begin -->
+    <section class="popular-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="news-item popular-item set-bg" data-setbg="public/upload/img/news/popular-b.jpg">
+                                <div class="ni-tag tenis">Tenis</div>
+                                <div class="ni-text">
+                                    <h5><a href="#">England reach World Cup last 16 with hard-fought win over
+                                            Argentina</a></h5>
+                                    <ul>
+                                        <li><i class="fa fa-calendar"></i> May 19, 2019</li>
+                                        <li><i class="fa fa-edit"></i> 3 Comment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="ni-pic">
+                                    <img src="public/upload/img/news/ln-1.jpg" alt="">
+                                </div>
+                                <div class="ni-text">
+                                    <h5><a href="#">There’s a great history of the winner Sandia</a></h5>
+                                    <ul>
+                                        <li><i class="fa fa-calendar"></i> May 19, 2019</li>
+                                        <li><i class="fa fa-edit"></i> 3 Comment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="ni-pic">
+                                    <img src="public/upload/img/news/ln-2.jpg" alt="">
+                                </div>
+                                <div class="ni-text">
+                                    <h5><a href="#">It’ll be a tough game and a physical game</a></h5>
+                                    <ul>
+                                        <li><i class="fa fa-calendar"></i> May 19, 2019</li>
+                                        <li><i class="fa fa-edit"></i> 3 Comment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="ni-pic">
+                                    <img src="public/upload/img/news/ln-3.jpg" alt="">
+                                </div>
+                                <div class="ni-text">
+                                    <h5><a href="#">If we don’t score we can’t get frustrated</a></h5>
+                                    <ul>
+                                        <li><i class="fa fa-calendar"></i> May 19, 2019</li>
+                                        <li><i class="fa fa-edit"></i> 3 Comment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="news-item popular-item set-bg" data-setbg="public/upload/img/news/popular-b.jpg">
+                                <div class="ni-tag football">Football</div>
+                                <div class="ni-text">
+                                    <h5><a href="#">We are playing history and Argentina at the World Cup, says Phil
+                                            Neville</a></h5>
+                                    <ul>
+                                        <li><i class="fa fa-calendar"></i> May 19, 2019</li>
+                                        <li><i class="fa fa-edit"></i> 3 Comment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="ni-pic">
+                                    <img src="public/upload/img/news/ln-5.jpg" alt="">
+                                </div>
+                                <div class="ni-text">
+                                    <h5><a href="#">Le Havre does have a growing fan club</a></h5>
+                                    <ul>
+                                        <li><i class="fa fa-calendar"></i> May 19, 2019</li>
+                                        <li><i class="fa fa-edit"></i> 3 Comment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="ni-pic">
+                                    <img src="public/upload/img/news/ln-6.jpg" alt="">
+                                </div>
+                                <div class="ni-text">
+                                    <h5><a href="#">It will be hard to break them down</a></h5>
+                                    <ul>
+                                        <li><i class="fa fa-calendar"></i> May 19, 2019</li>
+                                        <li><i class="fa fa-edit"></i> 3 Comment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="ni-pic">
+                                    <img src="public/upload/img/news/ln-7.jpg" alt="">
+                                </div>
+                                <div class="ni-text">
+                                    <h5><a href="#">We’ve never seen them as organised </a></h5>
+                                    <ul>
+                                        <li><i class="fa fa-calendar"></i> May 19, 2019</li>
+                                        <li><i class="fa fa-edit"></i> 3 Comment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="section-title">
+                        <h3>Follow <span>Us</span></h3>
+                    </div>
+                    <div class="follow-links">
+                        <ul>
+                            <li class="facebook">
+                                <i class="fa fa-facebook"></i>
+                                <div class="fl-name">Facebook</div>
+                                <span class="fl-fan">2.530 Fans</span>
+                            </li>
+                            <li class="twitter">
+                                <i class="fa fa-twitter"></i>
+                                <div class="fl-name">Twitter</div>
+                                <span class="fl-fan">2.046 Fans</span>
+                            </li>
+                            <li class="google">
+                                <i class="fa fa-google"></i>
+                                <div class="fl-name">Google</div>
+                                <span class="fl-fan">1.170 Fans</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Popular News Section End -->
+
 	<!-- section -->
 	<div class="section">
 		<!-- container -->
@@ -16,23 +155,6 @@
 			<div class="row">
 				<div class="col-md-8" >
 					<div class="row" >
-						<!-- post -->
-						<div class="col-md-12 mt-3">
-							<div class="post post-thumb">
-								<a class="post-img img-carbox3" href="{{asset('/'.$cate_detail->cate_slug.'/'.$post_1->post_slug.'-'.$post_1->post_id.'.html')}}" title="{{$post_1->post_title}}">
-									<img src="{{asset('public/upload/post/'.$post_1->post_image)}}" alt="{{$post_1->post_title}}">
-								</a>
-								<div class="post-body">
-									<div class="post-meta">
-										{{-- <a class="post-category cat-2" href="javascript:void(0)">JavaScript</a> --}}
-										<span class="post-date"><?php echo substr($post_1->created_at, 0, 7) ?></span>
-									</div>
-									<h3 class="post-title"><a href="{{asset('/'.$cate_detail->cate_slug.'/'.$post_1->post_slug.'-'.$post_1->post_id.'.html')}}" title="{{$post_1->post_title}}">{{$post_1->post_title}}</a></h3>
-								</div>
-							</div>
-						</div>
-						<!-- /post -->
-
 
 									
 						<!-- post -->
@@ -185,7 +307,7 @@
 								@foreach($cate as $c)
 									<li><a href="{{asset('/'.$c->cate_slug)}}" title="{{$c->cate_name}}" class="cat-1">{{$c->cate_name}}<span>
 										<?php
-											echo $count = DB::table('post')->where('post_cate_id', $c->cate_id)->count();
+											echo $count = DB::table('post2')->where('post_cate_id', $c->cate_id)->count();
 										?>
 									</span></a></li>
 								@endforeach

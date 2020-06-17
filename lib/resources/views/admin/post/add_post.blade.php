@@ -41,7 +41,7 @@
 									</style>
 									<div class="form-group" >
 										<label>Giới Thiệu</label>
-										<textarea class="form-control" required name="post_intro" rows="5" maxlength="80">{{old('post_intro')}}</textarea>
+										<textarea class="form-control" required name="post_intro" rows="5" maxlength="255">{{old('post_intro')}}</textarea>
 									</div>
 									<hr>
 
@@ -63,13 +63,13 @@
 
 									<div class="form-group">
 										<label>Meta Key</label>
-										<textarea class="form-control" rows="5" required name="meta_key">{{old('meta_key')}}</textarea>
+										<textarea class="form-control" rows="5" required name="meta_key" maxlength="255">{{old('meta_key')}}</textarea>
 									</div>
 									<hr>
 
 									<div class="form-group" >
 										<label>Meta Desc</label>
-										<textarea class="form-control" rows="5" required name="meta_desc">{{old('meta_desc')}}</textarea>
+										<textarea class="form-control" rows="5" required name="meta_desc" maxlength="255">{{old('meta_desc')}}</textarea>
 									</div>
 								</div>
 

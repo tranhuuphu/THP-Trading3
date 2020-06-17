@@ -97,7 +97,7 @@
     <!-- Css Styles -->
     <link rel="stylesheet" href="public/site_asset/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="public/site_asset/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="public/site_asset/css/magnific-popup.css" type="text/css">
+    {{-- <link rel="stylesheet" href="public/site_asset/css/magnific-popup.css" type="text/css"> --}}
     <link rel="stylesheet" href="public/site_asset/css/slicknav.min.css?v=<?php echo time(); ?>" type="text/css">
     <link rel="stylesheet" href="public/site_asset/css/style.css?v=<?php echo time(); ?>" type="text/css">
 
@@ -347,7 +347,7 @@
 	<!--=======================================================================-->
 	{{-- <script src="public/site_asset/js/main.js"></script> --}}
 
-    <script src="public/site_asset/js/jquery.magnific-popup.min.js"></script>
+    {{-- <script src="public/site_asset/js/jquery.magnific-popup.min.js"></script> --}}
     <script src="public/site_asset/js/jquery.slicknav.js?v=<?php echo time(); ?>"></script>
     <script src="public/site_asset/js/owl.carousel.min.js"></script>
     <script src="public/site_asset/js/main.js?v=<?php echo time(); ?>"></script>

@@ -28,7 +28,17 @@
     <!-- Hero Section End -->
 
 
-    <!-- Hero Section Begin -->
+    <!-- Hero Section Begin array_shift -->
+    <?php
+        $feat_1 = array_shift($featured);
+        $feat_2 = array_slice($featured, 0, 2);
+
+        $feat_3 = array_pop($featured);
+
+
+
+
+    ?>
     <section class="hero">
         <div class="hero__slider owl-carousel">
             <div class="hero__item">
@@ -36,75 +46,49 @@
                     <div class="row">
                         <div class="col-lg-6 p-0">
                             <div class="hero__inside__item hero__inside__item--wide set-bg"
-                                data-setbg="https://cdn.august.com.au/wp-content/uploads/2018/03/The-Bystander-Effect_Header-1-e1534393505129.png">
+                                data-setbg="public/upload/post/{{$feat_1->post_image}}" aria-label="{{$feat_1->post_title}}">
                                 <div class="hero__inside__item__text">
-                                    <div class="hero__inside__item--meta">
-                                        <span>08</span>
-                                        <p>Aug</p>
-                                    </div>
+
                                     <div class="hero__inside__item--text">
-                                        <ul class="label">
-                                            <li>Vegan</li>
-                                            <li>Desserts</li>
-                                        </ul>
-                                        <h4>Vegan White Peach Mug Cobbler With CardamomVegan<br /> White Peach Mug
-                                            Cobbler With Cardamom</h4>
+
+                                        <a href="{{asset($feat_1->cate_slug.'/'.$feat_1->post_slug.'-'.$feat_1->post_id.'.html')}}" title="{{$feat_1->post_title}}"><h4>{{$feat_1->post_title}}</h4></a>
                                         <ul class="widget">
-                                            <li>by <span>Admin</span></li>
-                                            <li>3 min read</li>
-                                            <li>20 Comment</li>
+                                            <li>{{$feat_1->post_intro}}</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6  p-0">
-                            <div class="hero__inside__item hero__inside__item--small set-bg"
-                                data-setbg="https://bd.gaadicdn.com/processedimages/hero/passion-pro-110/640X309/passion-pro-1105e5ddc9cb77f7.jpg">
-                                <div class="hero__inside__item__text">
-                                    <div class="hero__inside__item--meta">
-                                        <span>08</span>
-                                        <p>Aug</p>
-                                    </div>
-                                    <div class="hero__inside__item--text">
-                                        <ul class="label">
-                                            <li>Vegan</li>
-                                            <li>Desserts</li>
-                                        </ul>
-                                        <h5>How to Make a Milkshake With Any <br />Ice Cream, Any Toppings...</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="hero__inside__item hero__inside__item--small set-bg"
-                                data-setbg="https://bd.gaadicdn.com/processedimages/hero-motocorp/hero-motocorp-super-splendor/640X309/hero-motocorp-super-splendor5e5f6127a7470.jpg">
-                                <div class="hero__inside__item__text">
-                                    <div class="hero__inside__item--meta">
-                                        <span>08</span>
-                                        <p>Aug</p>
-                                    </div>
-                                    <div class="hero__inside__item--text">
-                                        <ul class="label">
-                                            <li>Vegan</li>
-                                            <li>Desserts</li>
-                                        </ul>
-                                        <h5>Vintage Copper Preserve Pan with <br />Brass Handles, Mid 19th Century</h5>
+                        <div class="col-lg-3 col-md-6 p-0">
+                            @foreach($feat_2 as $f2)
+                                <div class="hero__inside__item hero__inside__item--small set-bg"
+                                    data-setbg="public/upload/post/{{$f2->post_image}}" aria-label="{{$feat_1->post_title}}">
+                                    <div class="hero__inside__item__text">
+                                        
+                                        <div class="hero__inside__item--text">
+                                            
+                                            <a href="{{asset($f2->cate_slug.'/'.$f2->post_slug.'-'.$f2->post_id.'.html')}}" title="{{$f2->post_title}}"><h5>{{$f2->post_title}}</h5></a>
+                                            <ul class="widget">
+                                                <li>{{$f2->post_intro}}</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
+
                         </div>
                         <div class="col-lg-3 col-md-6  p-0">
-                            <div class="hero__inside__item set-bg" data-setbg="https://gaadiwaadi.com/wp-content/uploads/2019/07/Hero-HF-Deluxe-Beats-Splendor-Plus-e1564581227807.jpg">
+                            <div class="hero__inside__item set-bg" data-setbg="public/upload/post/{{$feat_3->post_image}}" aria-label="{{$feat_3->post_title}}">
                                 <div class="hero__inside__item__text">
-                                    <div class="hero__inside__item--meta">
-                                        <span>08</span>
-                                        <p>Aug</p>
-                                    </div>
+
                                     <div class="hero__inside__item--text">
-                                        <ul class="label">
-                                            <li>Vegan</li>
-                                            <li>Desserts</li>
+
+                                        <a href="{{asset($feat_3->cate_slug.'/'.$feat_3->post_slug.'-'.$feat_3->post_id.'.html')}}" title="{{$feat_3->post_title}}"><h5>{{$feat_3->post_title}}</h5></a>
+
+
+                                        <ul class="widget">
+                                            <li>{{$feat_3->post_intro}}</li>
                                         </ul>
-                                        <h5>Marinated Lentil Salad with Zucch <br />ini and Tomatoes</h5>
                                     </div>
                                 </div>
                             </div>
@@ -177,14 +161,14 @@
     <section class="soccer-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 p-0">
+                <div class="col-lg-12">
                     <div class="section-title">
-                        <h3>Bài Viết <span>Nổi Bật</span></h3>
+                        <h3>Bài Viết <span>Gần Đây</span></h3>
                     </div>
                 </div>
             </div>
             <div class="row">
-                @foreach($featured as $ft)
+                @foreach($recent as $ft)
                 <div class="col-lg-3 col-sm-6 p-0">
                     <div class="soccer-item set-bg" data-setbg="{{asset('/public/upload/post/'.$ft->post_image)}}" alt = "{{$ft->post_title}}">
                         @foreach($cate3 as $ct)
@@ -252,10 +236,10 @@
                                     </div>
                                     <div class="ni-text">
                                         <h4><a href="{{asset('/'.$data_cate_i->cate_slug.'/'.$data_cate_i->post_slug.'-'.$data_cate_i->cate_id.'.html')}}" title="{{$data_cate_i->post_title}}">{{$data_cate_i->post_title}}</a></h4>
-                                        <ul>
+                                        {{-- <ul>
                                             <li><i class="fa fa-calendar"></i> May 19, 2019</li>
                                             <li><i class="fa fa-edit"></i> 3 Comment</li>
-                                        </ul>
+                                        </ul> --}}
                                         <p>{{$data_cate_i->post_intro}}</p>
                                     </div>
                                 </div>
@@ -269,8 +253,8 @@
                                         <div class="ni-text">
                                             <h5><a href="{{asset('/'.$d_ii->cate_slug.'/'.$d_ii->post_slug.'-'.$d_ii->cate_id.'.html')}}" title="{{$d_ii->post_title}}">{{$d_ii->post_title}}</a></h5>
                                             <ul>
-                                                <li><i class="fa fa-calendar"></i> May 19, 2019</li>
-                                                <li><i class="fa fa-edit"></i> 3 Comment</li>
+                                                {{-- <li><i class="fa fa-calendar"></i> May 19, 2019</li>
+                                                <li><i class="fa fa-edit"></i> 3 Comment</li> --}}
                                                 <p>{{$d_ii->post_intro}}</p>
                                             </ul>
                                         </div>
@@ -460,27 +444,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="vote-option set-bg" data-setbg="public/upload/img/news/vote-bg.jpg">
-                        <div class="vo-text">
-                            <h5>In your opinion, which country will win this year</h5>
-                            <div class="vt-item">
-                                <input type="radio" name="like-team" id="one">
-                                <label for="one">Germany</label>
-                            </div>
-                            <div class="vt-item">
-                                <input type="radio" name="like-team" id="two">
-                                <label for="two">Brazil</label>
-                            </div>
-                            <div class="vt-item">
-                                <input type="radio" name="like-team" id="three">
-                                <label for="three">Myanmar</label>
-                            </div>
-                            <div class="vt-item">
-                                <input type="radio" name="like-team" id="four">
-                                <label for="four">Argentina</label>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -489,7 +453,7 @@
 
 
 
-	@if(isset($carousel))
+{{-- 	@if(isset($carousel))
 		<div id="carouselExampleIndicators" class="carousel slide container mb-3" data-ride="carousel">
 		  <?php $i = 0; ?>
 		  <ol class="carousel-indicators">
@@ -527,7 +491,7 @@
 		  </a>
 		</div>
 	@endif
-	<hr>
+	<hr> --}}
 
 
 	<!-- Feature post -->

@@ -22,16 +22,23 @@ class SiteController extends Controller
         $recent = null;
 
         $carousel = Carousel::orderBy('id', 'desc')->take(6)->get();
+        $featured = DB::table('post2')->join('cate2','cate2.cate_id','=','post2.post_cate_id')->orderBy('post_id', 'desc')->where('post_featured', '=' , 1)->take(4)->get()->toArray();
+
+        // dd($featured);
         
-    	$featured = Post::where('post_featured', 1)->orderBy('post_id', 'desc')->take(4)->get();
 
         $home_meta = Page::where('page_status', 1)->first();
 
-        $notIn = array();
+        // $featured2 = json_decode($featured, true);
+        // dd($featured2);
+
+        // $notIn = array();
         foreach($featured as $ft){
-            $notIn[] = $ft['post_id'];
+            $notIn[] = $ft->post_id;
+            // echo $ft['post_cate_id'];
         }
-        
+
+
         
         if($notIn != null){
             $recent = DB::table('post2')->orderBy('post_id', 'desc')->whereNotIn('post_id', $notIn)->get();
@@ -56,7 +63,7 @@ class SiteController extends Controller
 
 		$post_cate = Post::where('post_cate_id', $cate_id)->orderBy('post_id', 'desc')->simplePaginate(11);
         if(count($post_cate) == 0){
-            return view('notice.404');
+            return view('notice.400');
         }
 
         // Most Read
