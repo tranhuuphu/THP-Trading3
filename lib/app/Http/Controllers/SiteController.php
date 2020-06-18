@@ -29,13 +29,8 @@ class SiteController extends Controller
 
         $home_meta = Page::where('page_status', 1)->first();
 
-        // $featured2 = json_decode($featured, true);
-        // dd($featured2);
-
-        // $notIn = array();
         foreach($featured as $ft){
             $notIn[] = $ft->post_id;
-            // echo $ft['post_cate_id'];
         }
 
 
@@ -58,13 +53,28 @@ class SiteController extends Controller
         }
 
 		$cate_id = $cate_detail->cate_id;
+        $cate_parent = $cate_detail->parent_cate_id;
+        if($cate_parent == 0){
+            $cate_sub_id = Cate::where('parent_cate_id', $cate_id)->get()->toArray();
+            if($cate_sub_id != null){
+                foreach($cate_sub_id as $c_s){
+                    $cate_sub_array[] = $c_s['cate_id'];
+                }
+                $post_cate = Post::whereIn('post_cate_id', $cate_sub_array)->orderBy('post_id', 'desc')->simplePaginate(10);
+            }else{
+                $post_cate = Post::where('post_cate_id', $cate_id)->orderBy('post_id', 'desc')->simplePaginate(10);
+            }
+        }else{
+            $post_cate = Post::where('post_cate_id', $cate_id)->orderBy('post_id', 'desc')->simplePaginate(10);
+            if(count($post_cate) == 0){
+                return view('notice.404');
+
+            }
+        }
 
 		// $cate_title = $cate_slug['0']['cate_name'];
 
-		$post_cate = Post::where('post_cate_id', $cate_id)->orderBy('post_id', 'desc')->simplePaginate(11);
-        if(count($post_cate) == 0){
-            return view('notice.400');
-        }
+    		
 
         // Most Read
 

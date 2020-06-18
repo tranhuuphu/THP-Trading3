@@ -938,6 +938,11 @@ ol {
 	width: 100px;
 }
 
+.news-item .ni-pic2 img {
+	height: 150px;
+	width: 200px;
+}
+
 .news-item .ni-text {
 	overflow: hidden;
 	padding-top: 6px;

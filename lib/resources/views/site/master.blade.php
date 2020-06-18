@@ -350,7 +350,25 @@
     {{-- <script src="public/site_asset/js/jquery.magnific-popup.min.js"></script> --}}
     <script src="public/site_asset/js/jquery.slicknav.js?v=<?php echo time(); ?>"></script>
     <script src="public/site_asset/js/owl.carousel.min.js"></script>
+    <script src="public/site_asset/js/jquery.scrollUp.min.js"></script>
     <script src="public/site_asset/js/main.js?v=<?php echo time(); ?>"></script>
+    <style type="text/css">
+    	#scrollUp{background:#d6d6d6;height:50px;width:50px;right:31px;bottom:18px;color:#000;font-size:20px;text-align:center;border-radius:6%;line-height:48px;border:2px solid transparent}
+    	#scrollUp:hover{background: #c3ccd9}
+    </style>
+    <script type="text/javascript">
+    	$.scrollUp({
+	      scrollName: 'scrollUp', // Element ID
+	      topDistance: '500', // Distance from top before showing element (px)
+	      topSpeed: 300, // Speed back to top (ms)
+	      animation: 'fade', // Fade, slide, none
+	      animationInSpeed: 200, // Animation in speed (ms)
+	      animationOutSpeed: 200, // Animation out speed (ms)
+	      scrollText: '<i class="fa fa-long-arrow-up" aria-hidden="true"></i>', // Text for element
+	      activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+	    });
+    </script>
+
 
 
 
