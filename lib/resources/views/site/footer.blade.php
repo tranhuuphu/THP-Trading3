@@ -1,5 +1,5 @@
 <!-- Footer Section Begin -->
-    <footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
+    <footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg" style="border-top: 3px solid #f48024; margin-top: 20px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -74,85 +74,9 @@
         </div>
     </footer>
     <!-- Footer Section End -->
-	<!-- Footer -->
-	<footer id="footer">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<div class="col-md-5">
-					<div class="footer-widget">
-						<h3>Thông Tin</h3>
-						<p style="text-transform: uppercase; font-weight: bold;">Công Ty TNHH Curie Việt Nam</p>
-						<p>Địa chỉ ĐKKD: Thửa đất 1271, tờ bản đồ 19, khu phố An Hòa, Phường Hòa Lợi, Thị xã Bến Cát, Tỉnh Bình Dương</p>
-						<p>Địa chỉ: KP An Hòa, Phường Hòa Lợi, Bến Cát, Bình Dương</p>
-						<p>Đại diện pháp luật: Trần Hữu Hà</p>
-						<p>Mã số thuế: 3702594617</p>
-						<p>Email: <a href="mailto:curie.vn@gmail.com">curie.vn@gmail.com</a></p>
-						<div class="footer-logo">
-							<a href="index.html" class="logo"><img src="./img/logo.png" alt=""></a>
-						</div>
-						{{-- <ul class="footer-nav">
-							<li><a href="javascript:void(0)">Privacy Policy</a></li>
-							<li><a href="javascript:void(0)">Advertisement</a></li>
-						</ul> --}}
-						<div class="footer-copyright">
-							<span>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="javascript:void(0)">Huu Phu - 0974 953 600</a>
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							</span>
-						</div>
-					</div>
-				</div>
 
-				<div class="col-md-4">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="footer-widget">
-								<h3 class="footer-title">About Us</h3>
-								<ul class="footer-links">
-									@foreach($page as $p)
-										<li><a href="{{asset('/').$p->page_slug.'.html'}}" title="{{$p->page_title}}">{{$p->page_title}}</a></li>
-									@endforeach
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="footer-widget">
-								<h3 class="footer-title">Categories</h3>
-								<ul class="footer-links">
-									@foreach($cate as $c)
-										<li>
-											<a href="{{asset('/'.$c->cate_slug)}}" title="{{$c->cate_name}}" style="text-transform: capitalize;">{{$c->cate_name}}</a>
-										</li>
-									@endforeach
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<div class="col-md-3">
-					<div class="footer-widget">
-						<h3 class="footer-title">Địa Chỉ Google Maps</h3>
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1384.2437176126068!2d106.6632424141431!3d11.096043736983308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174cfc43bc7e2c5%3A0xe5bc84542907690d!2sC%C3%94NG%20TY%20TNHH%20CURIE%20VI%E1%BB%86T%20NAM!5e0!3m2!1svi!2s!4v1589384024258!5m2!1svi!2s" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
-					</div>
-				</div>
-
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</footer>
-	<!-- /Footer -->
-
-	<!-- Back to top -->
-	<div class="btn-back-to-top" id="myBtn">
-		<span class="symbol-btn-back-to-top">
-			<span class="fas fa-angle-up"></span>
-		</span>
-	</div>
 
 	<div class="hotline-phone-ring-wrap">
 		<div class="hotline-phone-ring">

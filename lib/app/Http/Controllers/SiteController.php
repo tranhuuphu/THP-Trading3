@@ -78,7 +78,10 @@ class SiteController extends Controller
 
         // Most Read
 
-        $most_read = Post::take(6)->orderBy('post_view', 'desc')->get();
+        // $most_read = Post::take(6)->orderBy('post_view', 'desc')->get();
+        $most_read = DB::table('post2')->join('cate2','cate2.cate_id','=','post2.post_cate_id')->orderBy('post_view', 'desc')->take(6)->get();
+        // dd($most_read);
+
 		
     	return view('site.post', compact('cate_detail', 'post_cate', 'slug', 'most_read'));
     }
@@ -134,8 +137,9 @@ class SiteController extends Controller
 
         // related
 
-        $previous = Post::where('post_id', '<', $post->post_id)->orderBy('post_id', 'desc')->take(3)->get();
-        $next = Post::where('post_id', '>', $post->post_id)->orderBy('post_id', 'asc')->take(3)->get();
+        $previous = DB::table('post2')->join('cate2','cate2.cate_id','=','post2.post_cate_id')->where('post_id', '<', $post->post_id)->orderBy('post_id', 'desc')->take(3)->get();
+        $next = DB::table('post2')->join('cate2','cate2.cate_id','=','post2.post_cate_id')->where('post_id', '>', $post->post_id)->orderBy('post_id', 'asc')->take(3)->get();
+
 
 
     	return view('site.getPost', compact('cate_data', 'post_detail', 'cate_slug', 'post_slug_2', 'previous', 'next'));

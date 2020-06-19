@@ -8,7 +8,7 @@
 		<nav aria-label="breadcrumb" style="margin: 30px 0;">
 		  <ol class="breadcrumb" style="border-radius: 0; background: #54b8ff">
 		    <li class="breadcrumb-item"><a href="{{asset('')}}">Home</a></li>
-		    <li class="breadcrumb-item active" aria-current="page"><a href="{{asset('/'.$page_result->page_slug)}}" title="{{$page_result->page_title}}" style="text-transform: capitalize;">{{$page_result->page_title}}</a></li>
+		    <li class="breadcrumb-item active" aria-current="page"><a href="{{asset('/'.$page_result->page_slug)}}" title="{{$page_result->page_title}}" style="text-transform: capitalize; color: #fff">{{$page_result->page_title}}</a></li>
 		  </ol>
 		</nav>
 	</div>

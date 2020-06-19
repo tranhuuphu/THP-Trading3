@@ -13,7 +13,7 @@
                 <ul>
                     <?php echo date("jS F, Y", strtotime("11.12.10"));?>
                     @foreach($page as $p)
-                        <li><a href="#">{{$p->page_title}}</a></li>
+                        <li><a href="{{$p->page_slug}}" title="{{$p->page_title}}">{{$p->page_title}}</a></li>
                     @endforeach
                 </ul>
             </div>

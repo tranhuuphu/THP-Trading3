@@ -3,7 +3,17 @@
 
 
 	
-	
+	<style type="text/css">
+		.main-post img{
+			width: 80% !important;
+			vertical-align: middle;
+			margin: auto;
+			align-items :center;
+		}
+		.main-post p{
+			color: #000;
+		}
+	</style>
 	<!-- section -->
 	<div class="section" >
 		<!-- container -->
@@ -17,10 +27,10 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12" style="background: #fff">
-									<div class="post-meta mt-3">
+									<div class="post-meta mt-1">
 										<span class="post-date"><?php echo substr($post_detail->updated_at, 0, 7); ?></span>
 									</div>
-									<h1 class="mt-2">{{$post_detail->post_title}}</h1>
+									<h1 class="mt-2" style="font-size: 30px; font-weight: bold;">{{$post_detail->post_title}}</h1>
 									<hr>
 									<div class="main-post post2_header mt-3 mb-3">
 										{!!$post_detail->post_content!!}
@@ -34,64 +44,31 @@
 						<hr>
 						<div class="card bg-secondary" style="margin-bottom: 10px; border-radius: 0;">
 							<div class="card-header text-white text-bold">
-								Share This Post
+								<i class="fa fa-share" aria-hidden="true"></i> Share This Post
 							</div>
 						</div>
 						<div class="post-shares sticky-shares">
 
 							<div class="fb-share-button" data-href="={{asset('/'.$cate_slug.'/'.$post_detail->post_slug.'-'.$post_detail->post_id.'.html')}}" data-layout="button_count" data-size="large"></div>
-
-							{{-- <a href="https://www.facebook.com/sharer/sharer.php?u={{asset('/'.$cate_slug.'/'.$post_detail->post_slug.'-'.$post_detail->post_id.'.html')}}" target="_blank"><i class="fab fa-facebook"></i></a> --}}
-
-
 							
 							<a class="twitter-share-button" href="https://twitter.com/intent/tweet?url={{asset('/'.$cate_slug.'/'.$post_detail->post_slug.'-'.$post_detail->post_id.'.html')}}" data-size="large" target="_blank">
-								<i class="fab fa-twitter"></i>
+								<i class="fa fa-twitter"></i>
 							</a>
 
 							<a href="https://pinterest.com/pin/create/button/?url={{asset('/'.$cate_slug.'/'.$post_detail->post_slug.'-'.$post_detail->post_id.'.html')}}&media{{asset('public/upload/post/'.$post_detail->post_image)}}/&description={{$post_detail->meta_desc}}" style="margin-right: 10px;" target="_blank">Save</a>
 
-							<a href="https://www.linkedin.com/shareArticle?mini=true&url={{asset('/'.$cate_slug.'/'.$post_detail->post_slug.'-'.$post_detail->post_id.'.html')}}&title={{$post_detail->post_title}}&summary={{$post_detail->post_intro}}&source=" target="_blank"><i class="fab fa-linkedin"></i></a>
-
-
-
+							<a href="https://www.linkedin.com/shareArticle?mini=true&url={{asset('/'.$cate_slug.'/'.$post_detail->post_slug.'-'.$post_detail->post_id.'.html')}}&title={{$post_detail->post_title}}&summary={{$post_detail->post_intro}}&source=" target="_blank"><i class="fa fa-linkedin"></i></a>
 
 						</div>
 					</div>
 
 					<!-- ad -->
 					<div class="section-row text-center">
-						For Adv
+						
 						<a href="#" style="display: inline-block;margin: auto;">
 							<img class="img-responsive" src="./img/ad-2.jpg" alt="" width="100%">
 						</a>
 					</div>
-					<!-- ad -->
-					
-					<!-- author -->
-					{{-- <div class="section-row">
-						<div class="post-author">
-							<div class="media">
-								<div class="media-left">
-									<img class="media-object" src="./img/author.png" alt="">
-								</div>
-								<div class="media-body">
-									<div class="media-heading">
-										<h3>John Doe</h3>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-									<ul class="author-social">
-										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li><a href="#"><i class="far fa-twitter"></i></a></li>
-										<li><a href="#"><i class="far fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="far fa-instagram"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div> --}}
-					<!-- /author -->
-
 
 
 					<!-- reply -->
@@ -107,9 +84,9 @@
 				<!-- /Post content -->
 
 				<!-- aside -->
-				<div class="col-md-4" >
+				<div class="col-md-4">
 					<!-- ad -->
-					For Adv
+					
 					<div class="aside-widget text-center">
 						<a href="#" style="display: inline-block;margin: auto;">
 							<img class="img-responsive" src="./img/ad-1.jpg" alt="">
@@ -138,16 +115,56 @@
 						  width: 30%;
 						}
 						.intro{
-							font-family: 'Nunito' !important;
 							font-size: 17px;
 							text-align: justify;
 						}
 						.title-2{
 							padding: 5px 10px;
-							font-family: 'Nunito Sans' !important;
 							font-size: 20px;
 							font-weight: bold;
 							color: #434343;
+						}
+						.blog-sidebar .bs-categories {
+							margin-bottom: 60px;
+						}
+
+						.blog-sidebar .bs-categories ul li {
+							list-style: none;
+							position: relative;
+							padding-left: 22px;
+						}
+
+						.blog-sidebar .bs-categories ul li a {
+							font-size: 16px;
+							color: #151618;
+							line-height: 30px;
+						}
+
+						.blog-sidebar .bs-categories ul li:before {
+							position: absolute;
+							left: 0;
+							top: 11px;
+							height: 8px;
+							width: 8px;
+							background: #636363;
+							content: "";
+							border-radius: 50%;
+						}
+
+						.blog-sidebar .bs-recent {
+							margin-bottom: 65px;
+						}
+
+						.blog-sidebar .bs-popular-tag .tags a {
+							display: inline-block;
+							font-size: 14px;
+							color: #636363;
+							font-weight: 500;
+							text-transform: uppercase;
+							background: #f2f2f2;
+							padding: 4px 16px;
+							margin-right: 6px;
+							margin-bottom: 10px;
 						}
 
 						@media only screen and (max-width: 991px) {
@@ -162,82 +179,62 @@
 							}
 						}
 					</style>
+
 					<!-- post widget -->
 					<div class="aside-widget" >
-						<div class="section-title">
-							<h2>Bài Viết Liên Quan</h2>
+						<div class="section-title sidebar-title">
+							<h5>Bài Viết Liên Quan</h5>
 						</div>
 						@foreach($next as $n)
-							@foreach($cate as $c)
-								@if($c->cate_id == $n->post_cate_id)
-
-									{{-- Post Singer --}}
-									<div style="background: #fff">
-										<div class="title-2">
-											<a href="{{asset('/'.$c->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">{{$n->post_title}}</a>
-										</div>
-										<div class="post-singer">
-										  <a href="{{asset('/'.$c->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">
-										  	<img class="img2" src="{{asset('public/upload/post/'.$n->post_image)}}" alt="{{$n->post_title}}" height="auto">
-										  </a>
-										  <div class="intro">{{$n->post_intro}}</div>
-										</div>
-									</div>
-										
-								@endif
-							@endforeach
+							{{-- Post Singer --}}
+							<div style="background: #fff">
+								<div class="title-2">
+									<a href="{{asset('/'.$n->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">{{$n->post_title}}</a>
+								</div>
+								<div class="post-singer">
+								  <a href="{{asset('/'.$n->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">
+								  	<img class="img2" src="{{asset('public/upload/post/'.$n->post_image)}}" alt="{{$n->post_title}}" height="auto">
+								  </a>
+								  <div class="intro">{{$n->post_intro}}</div>
+								</div>
+							</div>
 						@endforeach
 
 						@foreach($previous as $n)
-							@foreach($cate as $c)
-								@if($c->cate_id == $n->post_cate_id)
 
-									{{-- Post Singer --}}
-									<div style="background: #fff">
-										<div class="title-2">
-											<a href="{{asset('/'.$c->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">{{$n->post_title}}</a>
-										</div>
-										<div class="post-singer">
-										  <a href="{{asset('/'.$c->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">
-										  	<img class="img2" src="{{asset('public/upload/post/'.$n->post_image)}}" alt="{{$n->post_title}}" height="auto">
-										  </a>
-										  <div class="intro">{{$n->post_intro}}</div>
-										</div>
-									</div>
 
-{{-- 									<div class="post post-thumb">
-										<a class="post-img img-carbox2" href="{{asset('/'.$c->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}"><img src="{{asset('public/upload/post/'.$n->post_image)}}" alt="{{$n->post_title}}"></a>
-										<div class="post-body">
-											<div class="post-meta">												</div>
-											<h3 class="post-title"><a href="{{asset('/'.$c->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">{{$n->post_title}}</a></h3>
-											
-										</div>
-									</div> --}}
-								@endif
-							@endforeach
+							{{-- Post Singer --}}
+							<div style="background: #fff">
+								<div class="title-2">
+									<a href="{{asset('/'.$n->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">{{$n->post_title}}</a>
+								</div>
+								<div class="post-singer">
+								  <a href="{{asset('/'.$n->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">
+								  	<img class="img2" src="{{asset('public/upload/post/'.$n->post_image)}}" alt="{{$n->post_title}}" height="auto">
+								  </a>
+								  <div class="intro">{{$n->post_intro}}</div>
+								</div>
+							</div>
 						@endforeach
 
 					</div>
 					<!-- /post widget -->
 					
-					<!-- catagories -->
-					<div class="aside-widget">
-						<div class="section-title">
-							<h2>Category</h2>
-						</div>
-						<div class="category-widget">
-							<ul>
-								@foreach($cate as $c)
-									<li><a href="{{asset('/'.$c->cate_slug)}}" title="{{$c->cate_name}}" class="cat-2">{{$c->cate_name}}<span>
-										<?php
-											echo $count = DB::table('post')->where('post_cate_id', $c->cate_id)->count();
-										?>
-									</span></a></li>
-								@endforeach
-							</ul>
-						</div>
-					</div>
-					<!-- /catagories -->						
+					<div class="blog-sidebar">
+                        <div class="bs-categories">
+                            <div class="section-title sidebar-title">
+                                <h5>Categories</h5>
+                            </div>
+                            <ul>
+                            	@foreach($cate as $c)
+                                	<li><a href="{{$c->cate_slug}}" title="{{$c->cate_name}}">{{$c->cate_name}}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        
+                        
+                        
+                    </div>
 
 				</div>
 				<!-- /aside -->

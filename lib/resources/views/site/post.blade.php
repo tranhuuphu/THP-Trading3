@@ -51,15 +51,19 @@
                             @endforeach
 
 
-
+                            <nav aria-label="Page navigation example">
+								<ul class="pagination">
+									<?php echo $post_cate->links(); ?>
+								</ul>
+							</nav>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="section-title">
-                        <h3>Follow <span>Us</span></h3>
+                        {{-- <h3>Adv <span></span></h3> --}}
                     </div>
-                    <div class="follow-links">
+                    {{-- <div class="follow-links">
                         <ul>
                             <li class="facebook">
                                 <i class="fa fa-facebook"></i>
@@ -77,23 +81,31 @@
                                 <span class="fl-fan">1.170 Fans</span>
                             </li>
                         </ul>
-                    </div>
-
+                    </div> --}}
+                    <style type="text/css">
+                    	.post h5{
+                    		font-weight: bold;
+                    		padding-bottom: 15px;
+                    	}
+                    </style>
                     <div class="section-title">
 						<h2>Đọc Nhiều</h2>
 					</div>
 					@foreach($most_read as $mr)
-						@foreach($cate as $c)
-							@if($c->cate_id == $mr->post_cate_id)
-								<div class="post post-widget">
-									<a class="post-img img-carbox4" href="blog-post.html" style="margin-top: 7px;"><img src="{{asset('public/upload/post/'.$mr->post_image)}}" alt="{{$mr->post_title}}"></a>
-									<div class="post-body">
-										<h3 class="post-title"><a href="{{asset('/'.$c->cate_slug.'/'.$mr->post_slug.'-'.$mr->post_id.'.html')}}" title="{{$mr->post_title}}">{{$mr->post_title}}</a></h3>
-										<p>{{$mr->post_intro}}</p>
-									</div>
+
+						<div class="post post-widget">
+							<h5 class="post-title"><a href="{{asset('/'.$mr->cate_slug.'/'.$mr->post_slug.'-'.$mr->post_id.'.html')}}" title="{{$mr->post_title}}">{{$mr->post_title}}</a></h5>
+							<div class="media">
+								<img src="{{asset('public/upload/post/'.$mr->post_image)}}" width="40%" class="mr-3" alt="...">
+								<div class="media-body">
+									{{-- <h5 class="mt-0">{{$mr->post_intro}}</h5> --}}
+									<p>{{$mr->post_intro}}</p>
 								</div>
-							@endif
-						@endforeach
+							</div>
+
+						</div>
+						<hr>
+
 					@endforeach
 
                 </div>
