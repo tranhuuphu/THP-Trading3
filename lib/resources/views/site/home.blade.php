@@ -35,9 +35,6 @@
 
         $feat_3 = array_pop($featured);
 
-
-
-
     ?>
 
     <section class="hero">
@@ -237,7 +234,7 @@
                                         {{-- <div class="ni-tag">Soccer</div> --}}
                                     </div>
                                     <div class="ni-text">
-                                        <h4><a href="{{asset('/'.$data_cate_i->cate_slug.'/'.$data_cate_i->post_slug.'-'.$data_cate_i->cate_id.'.html')}}" title="{{$data_cate_i->post_title}}">{{$data_cate_i->post_title}}</a></h4>
+                                        <h4><a href="{{asset('/'.$data_cate_i->cate_slug.'/'.$data_cate_i->post_slug.'-'.$data_cate_i->post_id.'.html')}}" title="{{$data_cate_i->post_title}}">{{$data_cate_i->post_title}}</a></h4>
                                         {{-- <ul>
                                             <li><i class="fa fa-calendar"></i> May 19, 2019</li>
                                             <li><i class="fa fa-edit"></i> 3 Comment</li>
@@ -253,7 +250,7 @@
                                             <img src="{{asset('public/upload/post/'.$d_ii->post_image)}}" alt="{{$d_ii->post_title}}">
                                         </div>
                                         <div class="ni-text">
-                                            <h5><a href="{{asset('/'.$d_ii->cate_slug.'/'.$d_ii->post_slug.'-'.$d_ii->cate_id.'.html')}}" title="{{$d_ii->post_title}}">{{$d_ii->post_title}}</a></h5>
+                                            <h5><a href="{{asset('/'.$d_ii->cate_slug.'/'.$d_ii->post_slug.'-'.$d_ii->post_id.'.html')}}" title="{{$d_ii->post_title}}">{{$d_ii->post_title}}</a></h5>
                                             <ul>
                                                 {{-- <li><i class="fa fa-calendar"></i> May 19, 2019</li>
                                                 <li><i class="fa fa-edit"></i> 3 Comment</li> --}}
