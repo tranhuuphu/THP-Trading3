@@ -3,10 +3,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <div class="fs-logo">
-                        <div class="logo">
-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                        </div>
+                    <div class="fs-logo fs-widget">
+                        <h4>Top Club</h4>
+                        
                         <ul>
                             <li><i class="fa fa-envelope"></i> Info.colorlib@gmail.com</li>
                             <li><i class="fa fa-copy"></i> +(12) 345 6789 10</li>
@@ -54,20 +53,20 @@
             </div>
         </div>
         <div class="container">
-            <div class="copyright-option">
+            <div class="copyright-option pt-4">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="co-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Hữu Phú - 0974 953 600</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
-                        <div class="co-widget">
+                        {{-- <div class="co-widget">
                             <ul>
                                 <li><a href="#">Copyright notification</a></li>
                                 <li><a href="#">Terms of Use</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

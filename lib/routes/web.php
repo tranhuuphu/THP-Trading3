@@ -16,11 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-// Route::group(['middleware' => ['auth']], function() {
-//     Route::resource('roles','RoleController');
-//     Route::resource('users','UserController');
-//     Route::resource('products','ProductController');
-// });
+
 
 
 Route::group(['namespace'=>'Admin'], function(){
@@ -29,6 +25,8 @@ Route::group(['namespace'=>'Admin'], function(){
 			Route::post('/', 'LoginController@postLogin');
 	});
 	Route::get('logout', 'HomeController@getLogout');
+
+
 	Route::group(['prefix' => 'admin', 'middleware' => 'CheckLogedOut'], function(){
 		// Route::group(['middleware' => ['auth']], function() {
 		//     Route::resource('roles','RoleController');
@@ -47,7 +45,7 @@ Route::group(['namespace'=>'Admin'], function(){
 			Route::get('delete/{id}', 'CateController@getDeleteCate');
 		});
 
-		Route::group(['prefix' => 'post'], function(){
+		Route::group(['prefix' => 'post', 'middleware' => ['auth']], function(){
 			Route::get('/', 'PostController@getPost');
 
 			Route::get('add', 'PostController@getAddPost');
@@ -95,6 +93,13 @@ Route::group(['namespace'=>'Admin'], function(){
 			Route::get('delete/{id}', 'UserController@getDeleteUser');
 
 		});
+	});
+});
+
+Route::group(['middleware' => ['auth']], function() {
+	Route::group(['namespace' => 'admin', 'prefix' => 'admin'], function(){   
+	   Route::resource('roles','RoleController');
+	   Route::resource('users','UserController');
 	});
 });
 

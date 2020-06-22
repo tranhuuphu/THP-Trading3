@@ -12,19 +12,19 @@
             <div class="row">
                 <div class="col-xl-3 col-md-6">
                     <div class="card bg-primary text-white mb-4">
-                        <div class="card-body">Primary Card</div>
+                        <div class="card-body">Add Post</div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="#">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            <a class="small text-white stretched-link" href="{{asset('admin/post/add')}}">Click</a>
+                            <div class="small text-white"><i class="fas fa-plus"></i></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6">
                     <div class="card bg-warning text-white mb-4">
-                        <div class="card-body">Warning Card</div>
+                        <div class="card-body">Add Page</div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="#">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            <a class="small text-white stretched-link" href="{{asset('admin/page/add')}}">Click To Add</a>
+                            <div class="small text-white"><i class="fas fa-plus"></i></div>
                         </div>
                     </div>
                 </div>

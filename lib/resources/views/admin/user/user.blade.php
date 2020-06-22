@@ -1,4 +1,4 @@
-@extends('Admin.master')
+@extends('admin.master')
 @section('title', 'Trang Quản Lý Danh Mục')
 @section('main')		
 	<div class="col-sm-12 col-lg-12 main" style="margin-top: 40px;">
