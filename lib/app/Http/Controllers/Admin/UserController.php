@@ -14,74 +14,14 @@ use Hash;
 
 class UserController extends Controller
 {
-    //
-    public function getUser(){
-     //    $roles = Role::pluck('name','name')->all();
-    	$user = User::all();
-    	// return view('users.index', compact('data', 'roles'));
-
-        // $data = User::orderBy('id','DESC')->paginate(5);
-        return view('admin.user.user',compact('user'));
-    }
-
-    public function postAddUser(Request $request){
-    	$this->validate($request, [
-            'email' => 'required|unique:thp_user,email',
-            'password' => 'required',
-            'rePassword' => 'required|same:password'
-        ], [
-            'email.unique' => 'Email đã tồn tại',
-            'rePassword.same' => 'Không khớp'
-        ]);
-        $user = new User;
-    	$user->email = $request->email;
-    	$user->password = bcrypt($request->password);
-    	$user->level = $request->level;
-    	$user->save();
-
-        $user->assignRole($request->input('roles'));
-
-    	return redirect()->intended('admin/user')->with('error', 'Tạo tài khoản thành công');
-    }
-
-    public function getEditUser($id){
-    	$user = User::find($id);
-        $level = User::where('level', 1)->get();
-
-        $roles = Role::pluck('name','name')->all();
-        $userRole = $user->roles->pluck('name','name')->all();
-
-        DB::table('model_has_roles')->where('model_id',$id)->delete();
     
-        $user->assignRole($request->input('roles'));
-        
-
-    	return view('admin.user.edit_user', compact('user','level','roles','userRole'));
+    function __construct()
+    {
+         $this->middleware('permission:role-list|role-create|role-edit|role-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:role-create', ['only' => ['create','store']]);
+         $this->middleware('permission:role-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:role-delete', ['only' => ['destroy']]);
     }
-    public function postEditUser(Request $request, $id){
-    	$user = new User;
-
-    	$arr['user_title'] = $request->user_title;
-    	$arr['user_slug'] = Str::slug($request->user_title, '-');
-    	$arr['level'] = $request->level;
-    	$arr['user_content'] = $request->user_content;
-    	$arr['meta_key'] = $request->meta_key;
-    	$arr['meta_desc'] = $request->meta_desc;
-    	if($request->hasFile('user_image')){
-    		$user_image = $request->user_image->getClientOriginalName();
-    		$arr['user_image'] = $user_image;
-    		$request->user_image->storeAs('upload/user', $user_image);
-    	}
-
-    	$user::where('user_id', $id)->update($arr);
-    	return redirect('admin/user');
-    }
-
-    public function getDeleteUser($id){
-    	user::destroy($id);
-    	return back();
-    }
-
 
 
     /**
@@ -126,7 +66,7 @@ class UserController extends Controller
 
 
         $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
+        $input['password'] = bcrypt($request->password);
 
 
         $user = User::create($input);
@@ -165,7 +105,7 @@ class UserController extends Controller
         $userRole = $user->roles->pluck('name','name')->all();
 
 
-        return view('users.edit',compact('user','roles','userRole'));
+        return view('admin.users.edit',compact('user','roles','userRole'));
     }
 
 
@@ -178,6 +118,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $user = new User;
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
@@ -186,16 +127,24 @@ class UserController extends Controller
         ]);
 
 
-        $input = $request->all();
-        if(!empty($input['password'])){ 
-            $input['password'] = Hash::make($input['password']);
-        }else{
-            $input = array_except($input,array('password'));    
+        // $input = $request->all();
+        $input['name'] = $request->name;
+        $input['email'] = $request->email;
+
+        if(!empty($request->password)){ 
+            $input['password'] = bcrypt($request->password);
         }
+        // dd($input);
 
+        // if(!empty($input['password'])){ 
+        //     $input['password'] = Hash::make($input['password']);
+        // }else{
+        //     $input = array_except($input,array('password'));    
+        // }
 
+        $user::where('id', $id)->update($input);
         $user = User::find($id);
-        $user->update($input);
+        // $user->update($input);
         DB::table('model_has_roles')->where('model_id',$id)->delete();
 
 
@@ -218,6 +167,77 @@ class UserController extends Controller
         User::find($id)->delete();
         return redirect()->route('users.index')
                         ->with('success','User deleted successfully');
+    }
+
+
+
+
+    //
+    public function getUser(){
+     //    $roles = Role::pluck('name','name')->all();
+        $user = User::all();
+        // return view('users.index', compact('data', 'roles'));
+
+        // $data = User::orderBy('id','DESC')->paginate(5);
+        return view('admin.user.user',compact('user'));
+    }
+
+    public function postAddUser(Request $request){
+        $this->validate($request, [
+            'email' => 'required|unique:thp_user,email',
+            'password' => 'required',
+            'rePassword' => 'required|same:password'
+        ], [
+            'email.unique' => 'Email đã tồn tại',
+            'rePassword.same' => 'Không khớp'
+        ]);
+        $user = new User;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->level = $request->level;
+        $user->save();
+
+        $user->assignRole($request->input('roles'));
+
+        return redirect()->intended('admin/user')->with('error', 'Tạo tài khoản thành công');
+    }
+
+    public function getEditUser($id){
+        $user = User::find($id);
+        $level = User::where('level', 1)->get();
+
+        $roles = Role::pluck('name','name')->all();
+        $userRole = $user->roles->pluck('name','name')->all();
+
+        DB::table('model_has_roles')->where('model_id',$id)->delete();
+    
+        $user->assignRole($request->input('roles'));
+        
+
+        return view('admin.user.edit_user', compact('user','level','roles','userRole'));
+    }
+    public function postEditUser(Request $request, $id){
+        $user = new User;
+
+        $arr['user_title'] = $request->user_title;
+        $arr['user_slug'] = Str::slug($request->user_title, '-');
+        $arr['level'] = $request->level;
+        $arr['user_content'] = $request->user_content;
+        $arr['meta_key'] = $request->meta_key;
+        $arr['meta_desc'] = $request->meta_desc;
+        if($request->hasFile('user_image')){
+            $user_image = $request->user_image->getClientOriginalName();
+            $arr['user_image'] = $user_image;
+            $request->user_image->storeAs('upload/user', $user_image);
+        }
+
+        $user::where('user_id', $id)->update($arr);
+        return redirect('admin/user');
+    }
+
+    public function getDeleteUser($id){
+        user::destroy($id);
+        return back();
     }
 
 

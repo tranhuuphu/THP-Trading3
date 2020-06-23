@@ -76,7 +76,7 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Ra Ngoài Trang Chủ</div>
+                            {{-- <div class="sb-sidenav-menu-heading">Ra Ngoài Trang Chủ</div> --}}
                             <a class="nav-link btn btn btn-secondary" href="{{asset('')}}" target="_blank" style="border-radius: 0; color: #fff; font-weight: 700;"><div class="sb-nav-link-icon"><i class="fas fa-chart-bar" aria-hidden="true" style="color: #fff"></i></div>Home</a>
 
                             <div class="sb-sidenav-menu-heading">Core</div>
@@ -88,11 +88,17 @@
 
                             <a class="nav-link" href="{{asset('admin/post')}}"> <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>Bài Viết</a>
 
-                            <a class="nav-link" href="{{asset('admin/carousel')}}"> <div class="sb-nav-link-icon"><i class="fas fa-sliders-h"></i></div>Carousel - Slide</a>
+                            {{-- <a class="nav-link" href="{{asset('admin/carousel')}}"> <div class="sb-nav-link-icon"><i class="fas fa-sliders-h"></i></div>Carousel - Slide</a> --}}
 
                             <a class="nav-link" href="{{asset('admin/page')}}"> <div class="sb-nav-link-icon"><i class="fas fa-bullhorn"></i></div>Trang</a>
 
-                            <a class="nav-link" href="{{asset('admin/user')}}"> <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>Người Dùng</a>
+                            {{-- <a class="nav-link" href="{{asset('admin/user')}}"> <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>Người Dùng</a> --}}
+
+                            <a class="nav-link" href="{{asset('admin/users')}}"> <div class="sb-nav-link-icon"><i class="fas fa-key"></i></div>Users</a>
+
+                            <a class="nav-link" href="{{asset('admin/roles')}}"> <div class="sb-nav-link-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>Roles</a>
+
+                            {{-- <a class="nav-link" href="{{asset('admin/permission')}}"> <div class="sb-nav-link-icon"><i class="fas fa-key" aria-hidden="true"></i></div>Permission</a> --}}
 
 
 
