@@ -96,7 +96,7 @@
 						<div class="post post-widget">
 							<h5 class="post-title"><a href="{{asset('/'.$mr->cate_slug.'/'.$mr->post_slug.'-'.$mr->post_id.'.html')}}" title="{{$mr->post_title}}">{{$mr->post_title}}</a></h5>
 							<div class="media">
-								<img src="{{asset('public/upload/post/'.$mr->post_image)}}" width="40%" class="mr-3" alt="...">
+								<img src="{{asset('public/upload/post/'.$mr->post_image)}}" width="40%" class="mr-3" alt="{{$mr->post_title}}">
 								<div class="media-body">
 									{{-- <h5 class="mt-0">{{$mr->post_intro}}</h5> --}}
 									<p>{{$mr->post_intro}}</p>

@@ -28,11 +28,7 @@ Route::group(['namespace'=>'Admin'], function(){
 
 
 	Route::group(['prefix' => 'admin', 'middleware' => 'CheckLogedOut'], function(){
-		// Route::group(['middleware' => ['auth']], function() {
-		//     Route::resource('roles','RoleController');
-		//     Route::resource('users','UserController');
-		//     Route::resource('products','ProductController');
-		// });
+
 		Route::get('/', 'HomeController@getHome');
 		Route::get('home', 'HomeController@getHome');
 		Route::group(['prefix' => 'cate'], function(){
@@ -81,18 +77,18 @@ Route::group(['namespace'=>'Admin'], function(){
 
 		});
 
-		// Route::group(['prefix' => 'user'], function(){
-		// 	Route::get('/', 'UserController@getUser');
+		Route::group(['prefix' => 'user'], function(){
+			// Route::get('/', 'UserController@getUser');
 
-		// 	Route::get('add', 'UserController@getAddUser');
-		// 	Route::post('add', 'UserController@postAddUser');
+			// Route::get('add', 'UserController@getAddUser');
+			// Route::post('add', 'UserController@postAddUser');
 
-		// 	Route::get('edit/{id}', 'UserController@getEditUser');
-		// 	Route::post('edit/{id}', 'UserController@postEditUser');
+			Route::get('edit/{id}', 'UserController@getEditUser');
+			Route::post('edit/{id}', 'UserController@postEditUser');
 
-		// 	Route::get('delete/{id}', 'UserController@getDeleteUser');
+			// Route::get('delete/{id}', 'UserController@getDeleteUser');
 
-		// });
+		});
 	});
 });
 

@@ -3,13 +3,23 @@
 
 @section('main')
 <div class="container-fluid">
+  <div class="row">
+      <div class="col-lg-12" style="margin-top: 40px;">
+          <ol class="breadcrumb mb-4">
+              <li class="breadcrumb-item active"><a href="{{asset('admin/')}}">Dashboard</a></li>
+              <li class="breadcrumb-item"><strong><a href="{{asset('admin/roles')}}">Roles Management</a></strong></li>
+              <li class="breadcrumb-item"><strong>Create New Roles Management</strong></li>
+          </ol>
+
+      </div>
+  </div><!--/.row-->
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Create New Role</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('roles.index') }}"><i class="fas fa-arrow-circle-left"></i> Back</a>
             </div>
         </div>
     </div>

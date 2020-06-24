@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 use App\Models\Cate;
 use Illuminate\Support\Str;
 use DB;
@@ -65,16 +66,22 @@ class UserController extends Controller
         ]);
 
 
-        $input = $request->all();
-        $input['password'] = bcrypt($request->password);
+        // $input = $request->all();
+        // $input['password'] = bcrypt($request->password);
+
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        // $user->level = $request->level;
+        $user->save();
 
 
-        $user = User::create($input);
+        // $user = User::create($input);
         $user->assignRole($request->input('roles'));
 
 
-        return redirect()->route('admin.users.index')
-                        ->with('success','User created successfully');
+        return redirect('admin/users')->with('success','User created successfully');
     }
 
 
@@ -144,7 +151,6 @@ class UserController extends Controller
 
         $user::where('id', $id)->update($input);
         $user = User::find($id);
-        // $user->update($input);
         DB::table('model_has_roles')->where('model_id',$id)->delete();
 
 
@@ -171,74 +177,31 @@ class UserController extends Controller
 
 
 
-
-    //
-    public function getUser(){
-     //    $roles = Role::pluck('name','name')->all();
-        $user = User::all();
-        // return view('users.index', compact('data', 'roles'));
-
-        // $data = User::orderBy('id','DESC')->paginate(5);
-        return view('admin.user.user',compact('user'));
-    }
-
-    public function postAddUser(Request $request){
-        $this->validate($request, [
-            'email' => 'required|unique:thp_user,email',
-            'password' => 'required',
-            'rePassword' => 'required|same:password'
-        ], [
-            'email.unique' => 'Email đã tồn tại',
-            'rePassword.same' => 'Không khớp'
-        ]);
-        $user = new User;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-        $user->level = $request->level;
-        $user->save();
-
-        $user->assignRole($request->input('roles'));
-
-        return redirect()->intended('admin/user')->with('error', 'Tạo tài khoản thành công');
-    }
-
     public function getEditUser($id){
         $user = User::find($id);
-        $level = User::where('level', 1)->get();
 
-        $roles = Role::pluck('name','name')->all();
-        $userRole = $user->roles->pluck('name','name')->all();
+        if($id != Auth::user()->id || !isset($user)){
+            return redirect('admin/user/edit/'.Auth::user()->id);
+        }
 
-        DB::table('model_has_roles')->where('model_id',$id)->delete();
-    
-        $user->assignRole($request->input('roles'));
         
 
-        return view('admin.user.edit_user', compact('user','level','roles','userRole'));
+        return view('admin.users.edit_one', compact('user'));
     }
     public function postEditUser(Request $request, $id){
         $user = new User;
 
-        $arr['user_title'] = $request->user_title;
-        $arr['user_slug'] = Str::slug($request->user_title, '-');
-        $arr['level'] = $request->level;
-        $arr['user_content'] = $request->user_content;
-        $arr['meta_key'] = $request->meta_key;
-        $arr['meta_desc'] = $request->meta_desc;
-        if($request->hasFile('user_image')){
-            $user_image = $request->user_image->getClientOriginalName();
-            $arr['user_image'] = $user_image;
-            $request->user_image->storeAs('upload/user', $user_image);
+        $input['name'] = $request->name;
+        if(!empty($request->password)){ 
+            $input['password'] = bcrypt($request->password);
         }
 
-        $user::where('user_id', $id)->update($arr);
-        return redirect('admin/user');
+
+
+        $user::where('id', $id)->update($input);
+        return redirect('admin/home');
     }
 
-    public function getDeleteUser($id){
-        user::destroy($id);
-        return back();
-    }
 
 
 }

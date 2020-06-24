@@ -109,6 +109,7 @@
                         <div class="small">Logged in as:</div>
                         <strong style="color:  #fff">{{Auth::user()->email}}</strong>
                         <a class="btn btn-danger mt-2" href="{{asset('logout')}}"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
+                        <a class="btn btn-primary mt-2" href="{{asset('admin/user/edit/'.Auth::user()->id)}}"><i class="far fa-edit"></i> Edit</a>
                     </div>
                 </nav>
             </div>

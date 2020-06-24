@@ -12,7 +12,11 @@
                 </ol>
 			</div>
 		</div><!--/.row-->
-		
+		<div class="col-lg-12 margin-tb alert alert-primary">
+	        <div class="pull-">
+	            <a class="btn btn-warning" href="{{asset('admin/cate')}}"><i class="fas fa-arrow-circle-left"></i> Back</a>
+	        </div>
+	    </div>
 		<div class="row" style="margin-top: 10px;">
 			<div class="col-xs-12 col-md-7 col-lg-7">
 
