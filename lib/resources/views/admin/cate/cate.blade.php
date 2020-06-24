@@ -61,7 +61,7 @@
 							</div>
 
 							<div class="form-group">
-								<input type="submit" class="btn btn-secondary" name="submit" value="Add New Cate">
+								<button type="submit" class="btn btn-danger" name="submit" value=""><i class="fas fa-plus-circle"></i> Add New</button>
 							</div>
 						</form>
 					</div>
@@ -94,7 +94,7 @@
                                         <tr>
                                         	<td>
                                         		@if($cate->parent_cate_id == 0)
-                                        			<strong>{{$cate->cate_name}}</strong>
+                                        			<strong style="color: red">{{$cate->cate_name}}</strong>
                                         		@elseif($cate->parent_cate_id != 0)
                                         			{{$cate->cate_name}}
                                         			@foreach($cateList as $cate2)
