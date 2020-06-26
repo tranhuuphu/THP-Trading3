@@ -145,6 +145,7 @@ ol {
 	z-index: 1;
 }
 
+
 .section-title:after {
 	position: absolute;
 	left: 0;
@@ -934,8 +935,8 @@ ol {
 }
 
 .news-item .ni-pic img {
-	height: 100px;
-	width: 100px;
+	/*height: 100px;
+	width: 100px;*/
 }
 
 .news-item .ni-pic2 img {
@@ -950,6 +951,7 @@ ol {
 
 .news-item .ni-text h5 {
 	margin-bottom: 8px;
+	margin-top: -8px;
 }
 
 .news-item .ni-text h5 a {

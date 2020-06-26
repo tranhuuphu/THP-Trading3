@@ -38,10 +38,10 @@
     ?>
 
     <section class="hero">
-        <div class="hero__slider owl-carousel">
+        <div class="hero__slider owl-carousel2">
             <div class="hero__item">
-                <div class="container-fluid">
-                    <div class="row">
+                <div class="container" >
+                    <div class="row" style="padding: 0 10px;">
                         <div class="col-lg-6 p-0">
                             <div class="hero__inside__item hero__inside__item--wide set-bg"
                                 data-setbg="public/upload/post/{{$feat_1->post_image}}" aria-label="{{$feat_1->post_title}}">
@@ -113,7 +113,7 @@
 
     </style>
     {{-- Intro --}}
-    <section class="section bg-light" style="background-color: #f8f9fa; padding: 3em 0">
+    <section class="section bg-light" style="background-color: #f8f9fa; padding: 7em 0">
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-4 element-animate ">
@@ -158,14 +158,14 @@
     <!-- Soccer Section Recent Begin -->
     <section class="soccer-section">
         <div class="container">
-            <div class="row">
+            <div class="row" style="padding: 0 10px;">
                 <div class="col-lg-12">
                     <div class="section-title">
                         <h3>Bài Viết <span>Gần Đây</span></h3>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="padding: 0 10px;">
                 @foreach($recent as $ft)
                 <div class="col-lg-3 col-sm-6 p-0">
                     <div class="soccer-item set-bg" data-setbg="{{asset('/public/upload/post/'.$ft->post_image)}}" alt = "{{$ft->post_title}}">
@@ -194,40 +194,64 @@
     <section class="latest-section">
 
         <div class="container">
-            @foreach($cate as $ct)
-                <?php
-                    $id = $ct->cate_id;
-                    $sub_test = DB::table('cate2')->where('parent_cate_id', $id)->first();
-                    $sub = DB::table('cate2')->where('parent_cate_id', $id)->get();
-                    if($sub_test != null){
-                        foreach($sub as $s){
-                            $sub_cate_id[] = $s->cate_id;
+            
+            <style type="text/css">
+                .nav .active, ul, li, a, .nav-item{
+                    border-radius: none !important;
+                }
+                .nav ul li:hover{
+                    background: #f8f8f8;
+                }
+                .ni-pic3{
+                    width: 150px;
+                    overflow: hidden;
+                    border: 1px solid #f1f1f1;
+                }
+                .ni-pic3 img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+
+            </style>
+            <div class="row">
+                        
+                <div class="col-lg-8">
+                    @foreach($cate as $ct)
+                    <?php
+                        $id = $ct->cate_id;
+                        $sub_test = DB::table('cate2')->where('parent_cate_id', $id)->first();
+                        $sub = DB::table('cate2')->where('parent_cate_id', $id)->get();
+                        if($sub_test != null){
+                            foreach($sub as $s){
+                                $sub_cate_id[] = $s->cate_id;
+                            }
+
+                            $data_cate = DB::table('cate2')->join('post2','cate2.cate_id','=','post2.post_cate_id')->whereIn('post_cate_id', $sub_cate_id)->take(5)->get();
+
+                        }else{
+                            
+                            $data_cate = DB::table('cate2')->join('post2','cate2.cate_id','=','post2.post_cate_id')->where('post_cate_id', $id)->take(5)->get();
                         }
 
-                        $data_cate = DB::table('cate2')->join('post2','cate2.cate_id','=','post2.post_cate_id')->whereIn('post_cate_id', $sub_cate_id)->take(5)->get();
+                        $data_cate_i = $data_cate->shift();
+                        $data_cate_ii = $data_cate->all();
+                    ?>
+                    <ul class='nav nav-pills @if(isset($data_cate_i)) section-title @endif'>
+                        @if(isset($data_cate_i))
+                          <li class="nav-item" style="margin-right: 40px;">
+                            <a class="nav-link active" href="{{asset('/'.$ct->cate_slug)}}">{{$ct->cate_name}}</a>
+                          </li>
+                        @endif
+                        @foreach($cate2 as $ct2)
+                            @if($ct2->parent_cate_id == $ct->cate_id)
+                                <li class="nav-item" style="background: #f7f7f7"><a class="nav-link" href="{{asset('/'.$ct2->cate_slug)}}">{{$ct2->cate_name}}</a></li>
+                            @endif
+                        @endforeach
+                    </ul>
 
-                    }else{
-                        
-                        $data_cate = DB::table('cate2')->join('post2','cate2.cate_id','=','post2.post_cate_id')->where('post_cate_id', $id)->take(5)->get();
-                    }
-
-                    $data_cate_i = $data_cate->shift();
-                    $data_cate_ii = $data_cate->all();
-                ?>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="section-title latest-title">
-                            <h3><span><a href="{{asset('/'.$ct->cate_slug)}}">{{$ct->cate_name}}</a></span></h3>
-                            <ul>
-                                @foreach($cate2 as $ct2)
-                                    @if($ct2->parent_cate_id == $ct->cate_id)
-                                        <li><a href="{{asset('/'.$ct2->cate_slug)}}">{{$ct2->cate_name}}</a></li>
-                                    @endif
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="row">
-
+                    <div class="row">
+                        @if($data_cate_i != null)
                             <div class="col-md-6">
                                 <div class="news-item left-news">
                                     <div class="ni-pic set-bg" data-setbg="{{asset('public/upload/post/'.$data_cate_i->post_image)}}" alt = '{{$data_cate_i->post_title}}'>
@@ -243,10 +267,21 @@
                                     </div>
                                 </div>
                             </div>
+                        @endif
+                        <style type="text/css">
+                            .intro {
+                              -webkit-line-clamp: 3;
+                              -webkit-box-orient: vertical;
+                              overflow: hidden;
+                              display: -webkit-box;
+                              text-align: justify;
+                            }
+                        </style>
+                        @if($data_cate_i != null)
                             <div class="col-md-6">
                                 @foreach($data_cate_ii as $d_ii)
                                     <div class="news-item">
-                                        <div class="ni-pic">
+                                        <div class="ni-pic ni-pic3">
                                             <img src="{{asset('public/upload/post/'.$d_ii->post_image)}}" alt="{{$d_ii->post_title}}">
                                         </div>
                                         <div class="ni-text">
@@ -254,51 +289,50 @@
                                             <ul>
                                                 {{-- <li><i class="fa fa-calendar"></i> May 19, 2019</li>
                                                 <li><i class="fa fa-edit"></i> 3 Comment</li> --}}
-                                                <p>{{$d_ii->post_intro}}</p>
+                                                <p class="intro">{{$d_ii->post_intro}}</p>
                                             </ul>
                                         </div>
                                     </div>
+
                                 @endforeach
-
-
-                                
                             </div>
-                        </div>
+                        @endif
                     </div>
-                    <div class="col-lg-4">
-                        <div class="section-title">
-                            <h3>Follow <span>Us</span></h3>
-                        </div>
-                        <div class="follow-links">
-                            <ul>
-                                <li class="facebook">
-                                    <i class="fa fa-facebook"></i>
-                                    <div class="fl-name">Facebook</div>
-                                    <span class="fl-fan">2.530 Fans</span>
-                                </li>
-                                <li class="twitter">
-                                    <i class="fa fa-twitter"></i>
-                                    <div class="fl-name">Twitter</div>
-                                    <span class="fl-fan">2.046 Fans</span>
-                                </li>
-                                <li class="google">
-                                    <i class="fa fa-google"></i>
-                                    <div class="fl-name">Google</div>
-                                    <span class="fl-fan">1.170 Fans</span>
-                                </li>
-                            </ul>
-                        </div>
+                    @endforeach
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="section-title">
+                        <h3>Follow <span>Us</span></h3>
+                    </div>
+                    <div class="follow-links">
+                        <ul>
+                            <li class="facebook">
+                                <i class="fa fa-facebook"></i>
+                                <div class="fl-name">Facebook</div>
+                                <span class="fl-fan">2.530 Fans</span>
+                            </li>
+                            <li class="twitter">
+                                <i class="fa fa-twitter"></i>
+                                <div class="fl-name">Twitter</div>
+                                <span class="fl-fan">2.046 Fans</span>
+                            </li>
+                            <li class="google">
+                                <i class="fa fa-google"></i>
+                                <div class="fl-name">Google</div>
+                                <span class="fl-fan">1.170 Fans</span>
+                            </li>
+                        </ul>
+                    </div>
 
-                        <div class="aside-widget text-center">
-                            <a href="#" style="display: inline-block;margin: auto;">
-                                <img class="img-responsive" src="./public/upload/img/ad-1.jpg" alt="" width="100%">
-                            </a>
-                        </div>
+                    <div class="aside-widget text-center">
+                        <a href="#" style="display: inline-block;margin: auto;">
+                            <img class="img-responsive" src="./public/upload/img/ad-1.jpg" alt="" width="100%">
+                        </a>
                     </div>
                 </div>
-            @endforeach
-
-
+            </div>
+            
         </div>
     </section>
     <!-- Latest Section End -->

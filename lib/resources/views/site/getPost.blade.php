@@ -27,10 +27,9 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12" style="background: #fff">
-									<div class="post-meta mt-1">
-										<span class="post-date"><?php echo substr($post_detail->updated_at, 0, 7); ?></span>
-									</div>
+									
 									<h1 class="mt-2" style="font-size: 30px; font-weight: bold;">{{$post_detail->post_title}}</h1>
+
 									<hr>
 									<div class="main-post post2_header mt-3 mb-3">
 										{!!$post_detail->post_content!!}
