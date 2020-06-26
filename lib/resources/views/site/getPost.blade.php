@@ -26,7 +26,7 @@
 					<div id="post-header" class="page-header" >
 						<div class="container">
 							<div class="row">
-								<div class="col-md-12" style="background: #fff">
+								<div class="col-md-12" style="background: #fff; margin: 0 -15px;">
 									
 									<h1 class="mt-2" style="font-size: 30px; font-weight: bold;">{{$post_detail->post_title}}</h1>
 

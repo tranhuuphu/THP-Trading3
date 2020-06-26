@@ -49,7 +49,7 @@
             </li>
             @endforeach
             {{-- @endforeach --}}
-            <li><a href="./contact.html">Contact Us</a></li>
+            <li><a href="#">Contact Us</a></li>
         </ul>
         <div id="mobile-menu-wrap"></div>
     </div>
@@ -89,7 +89,7 @@
                 <div class="row">
                     <div class="col-lg-2">
                         <div class="logo">
-                            <a href="{{asset('')}}"><img src="public/upload/img/logo.png" alt=""></a>
+                            <a href="{{asset('')}}"><img src="{{asset('public/upload/page/').'/'.$page_favicon->page_image}}" alt="" style="height: 40px;"></a>
                         </div>
                     </div>
                     <div class="col-lg-10">

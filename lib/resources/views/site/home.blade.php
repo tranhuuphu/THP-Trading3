@@ -310,17 +310,17 @@
                             <li class="facebook">
                                 <i class="fa fa-facebook"></i>
                                 <div class="fl-name">Facebook</div>
-                                <span class="fl-fan">2.530 Fans</span>
+                                {{-- <span class="fl-fan">2.530 Fans</span> --}}
                             </li>
                             <li class="twitter">
                                 <i class="fa fa-twitter"></i>
                                 <div class="fl-name">Twitter</div>
-                                <span class="fl-fan">2.046 Fans</span>
+                                {{-- <span class="fl-fan">2.046 Fans</span> --}}
                             </li>
                             <li class="google">
                                 <i class="fa fa-google"></i>
                                 <div class="fl-name">Google</div>
-                                <span class="fl-fan">1.170 Fans</span>
+                                {{-- <span class="fl-fan">1.170 Fans</span> --}}
                             </li>
                         </ul>
                     </div>
