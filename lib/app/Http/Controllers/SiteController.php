@@ -20,8 +20,12 @@ class SiteController extends Controller
         $featured = null;
         $home_meta = null;
         $recent = null;
+        $contact = null;
+        $right_bar = null;
 
-        $carousel = Carousel::orderBy('id', 'desc')->take(6)->get();
+        // $carousel = Carousel::orderBy('id', 'desc')->take(6)->get();
+        $contact = Carousel::where('status', 0)->orderBy('id', 'desc')->first();
+        $right_bar = Carousel::where('status', 1)->orderBy('id', 'desc')->first();
         $featured = DB::table('post2')->join('cate2','cate2.cate_id','=','post2.post_cate_id')->orderBy('post_id', 'desc')->where('post_featured', '=' , 1)->take(4)->get()->toArray();
 
         // dd($featured);
@@ -39,7 +43,7 @@ class SiteController extends Controller
             $recent = DB::table('post2')->orderBy('post_id', 'desc')->whereNotIn('post_id', $notIn)->get();
         }
         
-    	return view('site.home', compact('featured', 'recent', 'home_meta', 'carousel'));
+    	return view('site.home', compact('featured', 'recent', 'home_meta', 'contact', 'right_bar'));
 
     	
     }
@@ -140,9 +144,9 @@ class SiteController extends Controller
         $previous = DB::table('post2')->join('cate2','cate2.cate_id','=','post2.post_cate_id')->where('post_id', '<', $post->post_id)->orderBy('post_id', 'desc')->take(3)->get();
         $next = DB::table('post2')->join('cate2','cate2.cate_id','=','post2.post_cate_id')->where('post_id', '>', $post->post_id)->orderBy('post_id', 'asc')->take(3)->get();
 
+        $contact = Carousel::where('status', 0)->orderBy('id', 'desc')->first();
 
-
-    	return view('site.getPost', compact('cate_data', 'post_detail', 'cate_slug', 'post_slug_2', 'previous', 'next'));
+    	return view('site.getPost', compact('cate_data', 'post_detail', 'cate_slug', 'post_slug_2', 'previous', 'next', 'contact'));
 
         
     }

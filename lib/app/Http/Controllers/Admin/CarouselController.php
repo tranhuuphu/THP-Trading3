@@ -41,6 +41,7 @@ class CarouselController extends Controller
     	$carousel = new Carousel;
     	$carousel->carousel_title = $request->carousel_title;
     	$carousel->carousel_slug = Str::slug($request->carousel_title, '-');
+        $carousel->status = $request->status;
 
         if($request->hasFile('carousel_image')){
             $file = $request->file('carousel_image');
@@ -81,7 +82,8 @@ class CarouselController extends Controller
     	$carousel = new Carousel;
     	$carousel_detail = Carousel::find($id);
     	$arr['carousel_title'] = $request->carousel_title;
-    	$arr['carousel_slug'] = Str::slug($request->carousel_title, '-');
+    	$arr['carousel_slug']  = Str::slug($request->carousel_title, '-');
+        $arr['status']         = $request->status;
 
     	if($request->hasFile('carousel_image')){
 
@@ -125,6 +127,6 @@ class CarouselController extends Controller
             File::delete($image_path);
         }
     	Carousel::destroy($id);
-    	return back()->with('success', 'Bạn Vừa Xóa Thành Công Slide: '.$carousel_title);;
+    	return back()->with('success', 'Bạn Vừa Xóa Thành Công Ảnh: '.$carousel_title);;
     }
 }

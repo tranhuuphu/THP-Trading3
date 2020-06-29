@@ -88,7 +88,7 @@
 
                             <a class="nav-link" href="{{asset('admin/post')}}"> <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>Bài Viết</a>
 
-                            {{-- <a class="nav-link" href="{{asset('admin/carousel')}}"> <div class="sb-nav-link-icon"><i class="fas fa-sliders-h"></i></div>Carousel - Slide</a> --}}
+                            <a class="nav-link" href="{{asset('admin/carousel')}}"> <div class="sb-nav-link-icon"><i class="fas fa-sliders-h"></i></div>Ảnh Right Bar</a>
 
                             <a class="nav-link" href="{{asset('admin/page')}}"> <div class="sb-nav-link-icon"><i class="fas fa-bullhorn"></i></div>Trang</a>
 

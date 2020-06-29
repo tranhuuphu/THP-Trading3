@@ -83,9 +83,13 @@
 				<!-- /Post content -->
 
 				<!-- aside -->
-				<div class="col-md-4">
+				<div class="col-md-4 mt-2">
 					<!-- ad -->
-					
+					<div class="section-title">
+                        <h3>Contact Us For <span>Service</span></h3>
+                    </div>
+                    <img class="img-responsive" src="{{asset('public/upload/carousel/'.$contact->carousel_image)}}" alt="{{$contact->carousel_title}}" width="100%">
+
 					<div class="aside-widget text-center">
 						<a href="#" style="display: inline-block; margin: auto;">
 							<img class="img-responsive" src="./img/ad-1.jpg" alt="">
@@ -180,43 +184,43 @@
 					</style>
 
 					<!-- post widget -->
-					<div class="aside-widget" >
-						<div class="section-title sidebar-title">
-							<h5>Bài Viết Liên Quan</h5>
+					
+					<div class="section-title">
+                        <h3>Bài Viết <span>Liên Quan</span></h3>
+                    </div>
+					@foreach($next as $n)
+						{{-- Post Singer --}}
+						<div style="background: #fff">
+							<div class="title-2">
+								<a href="{{asset('/'.$n->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">{{$n->post_title}}</a>
+							</div>
+							<div class="post-singer">
+							  <a href="{{asset('/'.$n->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">
+							  	<img class="img2" src="{{asset('public/upload/post/'.$n->post_image)}}" alt="{{$n->post_title}}" height="auto">
+							  </a>
+							  <div class="intro">{{$n->post_intro}}</div>
+							</div>
 						</div>
-						@foreach($next as $n)
-							{{-- Post Singer --}}
-							<div style="background: #fff">
-								<div class="title-2">
-									<a href="{{asset('/'.$n->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">{{$n->post_title}}</a>
-								</div>
-								<div class="post-singer">
-								  <a href="{{asset('/'.$n->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">
-								  	<img class="img2" src="{{asset('public/upload/post/'.$n->post_image)}}" alt="{{$n->post_title}}" height="auto">
-								  </a>
-								  <div class="intro">{{$n->post_intro}}</div>
-								</div>
+					@endforeach
+
+					@foreach($previous as $n)
+
+
+						{{-- Post Singer --}}
+						<div style="background: #fff">
+							<div class="title-2">
+								<a href="{{asset('/'.$n->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">{{$n->post_title}}</a>
 							</div>
-						@endforeach
-
-						@foreach($previous as $n)
-
-
-							{{-- Post Singer --}}
-							<div style="background: #fff">
-								<div class="title-2">
-									<a href="{{asset('/'.$n->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">{{$n->post_title}}</a>
-								</div>
-								<div class="post-singer">
-								  <a href="{{asset('/'.$n->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">
-								  	<img class="img2" src="{{asset('public/upload/post/'.$n->post_image)}}" alt="{{$n->post_title}}" height="auto">
-								  </a>
-								  <div class="intro">{{$n->post_intro}}</div>
-								</div>
+							<div class="post-singer">
+							  <a href="{{asset('/'.$n->cate_slug.'/'.$n->post_slug.'-'.$n->post_id.'.html')}}" title="{{$n->post_title}}">
+							  	<img class="img2" src="{{asset('public/upload/post/'.$n->post_image)}}" alt="{{$n->post_title}}" height="auto">
+							  </a>
+							  <div class="intro">{{$n->post_intro}}</div>
 							</div>
-						@endforeach
+						</div>
+					@endforeach
 
-					</div>
+					
 					<!-- /post widget -->
 					
 					<div class="blog-sidebar">

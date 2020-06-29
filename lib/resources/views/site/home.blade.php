@@ -113,14 +113,14 @@
 
     </style>
     {{-- Intro --}}
-    <section class="section bg-light" style="background-color: #f8f9fa; padding: 7em 0">
+    <section class="section bg-light" style="background-color: #f8f9fa; padding: 7em 0; margin-top: 50px;">
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-4 element-animate ">
             <div class="media block-6 d-block text-center">
               <div class="icon mb-3"><i class="fa fa-bell-o fa-3x" aria-hidden="true"></i></div>
               <div class="media-body">
-                <h3 class="heading">Modern Design</h3>
+                <h3 class="heading font-weight-bold">Modern Design</h3>
                 
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               </div>
@@ -131,7 +131,7 @@
             <div class="media block-6 d-block text-center">
               <div class="icon mb-3"><i class="fa fa-leaf fa-3x" aria-hidden="true"></i></div>
               <div class="media-body">
-                <h3 class="heading">Build With Love</h3>
+                <h3 class="heading font-weight-bold">Build With Love</h3>
                 
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               </div>
@@ -142,7 +142,7 @@
             <div class="media block-6 d-block text-center">
               <div class="icon mb-3"><i class="fa fa-bolt fa-3x" aria-hidden="true"></i></div>
               <div class="media-body">
-                <h3 class="heading">Fast Loading</h3>
+                <h3 class="heading font-weight-bold">Fast Loading</h3>
                 
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               </div>
@@ -324,6 +324,16 @@
                             </li>
                         </ul>
                     </div>
+
+                    <div class="section-title">
+                        <h3>Contact <span>Us</span></h3>
+                    </div>
+                    <img class="img-responsive" src="{{asset('public/upload/carousel/'.$contact->carousel_image)}}" alt="{{$contact->carousel_title}}" width="100%">
+                    <hr>
+                    <div class="section-title mt-3">
+                        <h3>Event <span></span></h3>
+                    </div>
+                    <img class="img-responsive" src="{{asset('public/upload/carousel/'.$right_bar->carousel_image)}}" alt="{{$right_bar->carousel_title}}" width="100%">
 
                     <div class="aside-widget text-center">
                         <a href="#" style="display: inline-block;margin: auto;">
