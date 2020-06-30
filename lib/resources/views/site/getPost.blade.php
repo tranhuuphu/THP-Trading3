@@ -41,7 +41,7 @@
 					<div class="section-row sticky-container">
 						
 						<hr>
-						<div class="card bg-secondary" style="margin-bottom: 10px; border-radius: 0;">
+						<div class="card bg-secondary" style="margin-bottom: 10px; border-radius: 0; border-bottom: 3px #f7d425 solid;">
 							<div class="card-header text-white text-bold">
 								<i class="fa fa-share" aria-hidden="true"></i> Share This Post
 							</div>
