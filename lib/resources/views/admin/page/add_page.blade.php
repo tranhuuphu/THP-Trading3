@@ -13,6 +13,11 @@
 
 			</div>
 		</div><!--/.row-->
+		<div class="col-lg-12 margin-tb alert alert-primary">
+	        <div class="pull-">
+	            <a class="btn btn-info" href="{{asset('admin/page')}}"><i class="fas fa-arrow-circle-left"></i> Back</a>
+	        </div>
+	    </div>
 		
 		<div class="row" style="margin-top: 10px;">
 			<div class="col-xs-12 col-md-12 col-lg-12">
@@ -97,7 +102,7 @@
 								</div>
 								<div class="col-xs-12 col-lg-12" style="background: #5da8de; padding: 20px; margin: 30px 0 10px 0;">
 									<input type="submit" name="submit" value="Thêm" class="btn btn-primary">
-									<a href="#" class="btn btn-danger"><i class="fa fa-window-close" aria-hidden="true"></i> Hủy bỏ</a>
+									<a href="{{asset('admin/page')}}" class="btn btn-danger"><i class="fa fa-window-close" aria-hidden="true"></i> Hủy bỏ</a>
 								</div>
 
 
