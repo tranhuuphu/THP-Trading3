@@ -31,7 +31,7 @@
 									<h1 class="mt-2" style="font-size: 30px; font-weight: bold;">{{$post_detail->post_title}}</h1>
 
 									<hr>
-									<div class="main-post post2_header mt-3 mb-3">
+									<div id="image-zoom" class="main-post post2_header mt-3 mb-3">
 										{!!$post_detail->post_content!!}
 									</div>
 								</div>
@@ -268,9 +268,25 @@
 
 @section('updated_at'){{$post_detail->updated_at}}@stop
 
-@section('script')@stop
+@section('style')
+	
+	<link rel="stylesheet" href="public/site_asset/zoom/zoomify.min.css" type="text/css">
+
+@stop
+
+@section('style_code')
+
+
+@stop
+
+@section('script')
+	<script src="public/site_asset/zoom/zoomify.min.js"></script>
+@stop
 
 @section('script_code')
+<script type="text/javascript">
+	$('.main-post img').zoomify();
+</script>
 <div id="fb-root"></div>
 	  <script>(function(d, s, id) {
 	    var js, fjs = d.getElementsByTagName(s)[0];

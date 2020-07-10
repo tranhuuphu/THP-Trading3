@@ -46,7 +46,7 @@
 	<meta property="og:image" content="@yield('image')" />
 	<meta property="og:description" content="@yield('description')" />
 	<meta property="og:locale" content="vi_VN" />
-	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="telephone=0963214487">
 	<meta name="thumbnail" content="@yield('image')" />    
 
 
@@ -101,8 +101,10 @@
     <link rel="stylesheet" href="public/site_asset/css/slicknav.min.css?v=<?php echo time(); ?>" type="text/css">
     <link rel="stylesheet" href="public/site_asset/css/style.css?v=<?php echo time(); ?>" type="text/css">
 
-
+    @yield('style')
+    
 	<style type="text/css">
+		@yield('style_code')
 		.hotline-phone-ring-wrap {
 		  position: fixed;
 		  bottom: 0;
@@ -308,7 +310,7 @@
           box-shadow: inset 0 -1px 0 #ddd;
           outline:none;
         }
-        @yield('style_code')
+        
 	</style>
 
 </head>
@@ -352,6 +354,10 @@
     <script src="public/site_asset/js/owl.carousel.min.js"></script>
     <script src="public/site_asset/js/jquery.scrollUp.min.js"></script>
     <script src="public/site_asset/js/main.js?v=<?php echo time(); ?>"></script>
+
+
+    @yield('script')
+
     <style type="text/css">
     	#scrollUp{background:#d6d6d6;height:50px;width:50px;right:31px;bottom:18px;color:#000;font-size:20px;text-align:center;border-radius:6%;line-height:48px;border:2px solid transparent}
     	#scrollUp:hover{background: #c3ccd9}
