@@ -24,7 +24,8 @@ class SiteController extends Controller
         $right_bar = null;
 
         // $carousel = Carousel::orderBy('id', 'desc')->take(6)->get();
-        $contact = Carousel::where('status', 0)->orderBy('id', 'desc')->first();
+        $contact = Carousel::whereIn('status', [1, 0])->orderBy('id', 'desc')->take(2)->get();
+        dd($contact);
         $right_bar = Carousel::where('status', 1)->orderBy('id', 'desc')->first();
         $featured = DB::table('post2')->join('cate2','cate2.cate_id','=','post2.post_cate_id')->orderBy('post_id', 'desc')->where('post_featured', '=' , 1)->take(4)->get()->toArray();
 

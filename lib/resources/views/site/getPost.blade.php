@@ -14,7 +14,7 @@
 			color: #000;
 		}
 		.main-post img{
-			margin: 15px 0;
+			margin: 10px 0;
 		}
 	</style>
 	<!-- section -->

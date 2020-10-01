@@ -359,7 +359,7 @@
     @yield('script')
 
     <style type="text/css">
-    	#scrollUp{background:#d6d6d6;height:50px;width:50px;right:31px;bottom:18px;color:#000;font-size:20px;text-align:center;border-radius:6%;line-height:48px;border:2px solid transparent}
+    	#scrollUp{background:#d6d6d6;height:50px;width:50px;right:31px;bottom:48px;color:#000;font-size:20px;text-align:center;border-radius:6%;line-height:48px;border:2px solid transparent}
     	#scrollUp:hover{background: #c3ccd9}
     </style>
     <script type="text/javascript">
